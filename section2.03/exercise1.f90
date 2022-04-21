@@ -23,6 +23,9 @@ program exercise1
   real, dimension(2) :: x1
   real, dimension(2) :: x2
 
+  complex, dimension(2) :: z
+  complex :: zd
+
   d = b*b - 4.0*a*c
 
   if (d > 0.0) then
@@ -44,15 +47,10 @@ program exercise1
 
   ! Use complex numbers
 
-  block
-    complex, dimension(2) :: z
-    complex :: zd
-
-    zd = cmplx(d)
-    z(1) = (-b + sqrt(zd))/(2.0*a)
-    z(2) = (-b - sqrt(zd))/(2.0*a)
-    print *, "Complex     z1 = ", z(1)
-    print *, "Complex     z2 = ", z(2)
-  end block
+  zd = cmplx(d)
+  z(1) = (-b + sqrt(zd))/(2.0*a)
+  z(2) = (-b - sqrt(zd))/(2.0*a)
+  print *, "Complex     z1 = ", z(1)
+  print *, "Complex     z2 = ", z(2)
 
 end program exercise1
