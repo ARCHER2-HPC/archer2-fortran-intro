@@ -27,7 +27,7 @@ Fortran. Fortran is a rather "large" language, so it is not possible to
 cover all its features in a two day course. Further elements of Fortran
 are discussed in the "Intermediate Modern Fortran" course.
 
-Prerequisites: attendees *must* be familiar which the basic concepts of
+Prerequisites: attendees *must* be familiar with the basic concepts of
 programming: variables, logic, flow of control, loops, functions and
 so on. No knowledge of Fortran is assumed. Previous programming
 experience might typically be in the context C/C++ or python.
@@ -49,6 +49,9 @@ support IDEs).
 
 ## Timetable
 
+The timetable may shift slightly in terms of content, but we will stick to the
+advertised start and finish times, and the break times.
+
 ### Day one
 
 | Time  | Content                                                 | Section                    |
@@ -56,33 +59,49 @@ support IDEs).
 | 09:30 | Logistics: login, compiler set-up, local details        | None                       |
 | 10:00 | "Hello World",                                          |                            |
 |       | `program`, `print` and `write`, `use`                   | [section1.01](section1.01) |
-|       | Variables: numeric; expressions and assignments, kind   |                            |
+| 10:20 | Variables: numeric; expressions and assignments, kind   |                            |
 |       | `real`, `integer`, `complex`, `parameter`               | [section1.02](section1.02) |
-|       | Variables: logical, character, conditionals             |                            |
+| 10:40 | Variables: logical, character, conditionals             |                            |
 |       | `if  .. end if` and `select case`                       | [section1.03](section1.03) |
 | 11:00 | Break                                                   |                            |
 | 11:30 | Loops and flow of control                               |                            |
 |       | `do .. end do`, `exit` and `cycle`                      | [section2.01](section2.01) |
-|       | Array declarations: rank, bounds, size and shape        |                            |
+| 11:50 | Array declarations: rank, bounds, size and shape        |                            |
 |       | `dimension`, `allocatable`, `allocate()`, `reshape()`   | [section2.02](section2.02) |
-|       | Array expressions: sections, conformance, masks         |                            |
-|       | `minval()` `maxval()` .. `where` `any()` `all()`        | [section2.03](section2.03) |
+| 12:10 | Array expressions: sections, conformance, masks         |                            |
+|       | `minval()` etc.; `where .. end where`; `any()` `all()`  | [section2.03](section2.03) |
+| 12:30 | Mini-exercise: solve a tri-diagonal system              |                            |
+|       |                                                         | [section2.04](section2.04) |
 | 13:00 | Lunch                                                   |                            |
-| 14:00 | Modules and compilation of modules                      |                            |
+| 14:00 | Modules and compilation of modules; scope               |                            |
+|       | `module .. contains .. end module`; `public`, `private` | [section3.01](section3.01) |
+| 14:20 | Functions and subroutines; dummy argument intent        |                            |
+|       | `function` `result()` `subroutine` `intent` ...         | [section3.02](section3.02) |
+| 14:40 | More on array dummy arguments; assumed shape, ...       |                            |
+|       | `lbound()`, `ubound()`                                  | [section3.03](section3.03) |
 | 15:00 | Break                                                   |                            |
-| 15:30 | More on functions                                       |                            |
+| 15:30 | More on characters and strings; deferred length         |                            |
+|       | `len()` `len_trim()`, `trim()`                          | [section4.01](section4.01) |
+| 15:50 | Format strings and edit descriptors                     |                            |
+|       | `read` and `write`                                      | [section4.02](section4.02) |
+| 16:10 | I/O and files; recovering from errors, or not           |                            |
+|       | `open` `close` `inquire` `stop`                         | [section4.03](section4.03) |
 | 16:30 | Finish                                                  |                            |
 
 ### Day two
 
-| Time  | Content                                           | Section                    |
-|-------|---------------------------------------------------|----------------------------|
-| 09:30 | Functions, results, intent, interface blocks ...  |                            |
-| 10:00 | Array; pointers and targets                       |                            |
-| 11:00 | Break                                             |                            |
-| 11:30 | Structures: types                                 |                            |
-| 13:00 | Lunch                                             |                            |
-| 14:00 | Meso-exercise                                     |                            |
-| 16:00 | Other things you may see; tools; resources        |                            |
-| 16:30 | Finish                                            |                            |
-
+| Time  | Content                                                 | Section                    |
+|-------|---------------------------------------------------------|----------------------------|
+| 09:30 | Data structures                                         |                            |
+| 09:30 | `type .. end type`                                      |                            |
+| 10:00 | Pointer attribute and targets                           |                            |
+|       | `pointer`, `null()`, `associated()`                     |                            |
+| 11:00 | Break                                                   |                            |
+| 11:30 | Functions: interface blocks, limited polymorphism ...   |                            |
+|       | `interface`, `module procedure`                         |                            |
+| 13:00 | Lunch                                                   |                            |
+| 14:00 | Exercises                                               |                            |
+| 15:00 | Break                                                   |                            |
+| 15:30 | Exercises / solutions                                   |                            |
+| 16:00 | Other things you may see; tools; resources              |                            |
+| 16:30 | Finish                                                  |                            |
