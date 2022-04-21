@@ -1,7 +1,8 @@
 # Array expressions and assignments
 
-Fortran allows some fairly flexible operations on arrays or subsets
-of array elements.
+Fortran allows some flexible operations on arrays or subsets
+of array elements, and provides numerous intrinsic functions
+for such operations.
 
 ## Array sections
 
@@ -26,8 +27,8 @@ it may not be zero.
 Intrinsic operations can be used to construct expressions which are
 arrays. For example:
 ```
-  integer, dimension(8, 16) :: a1, a2
-  integer, dimension(8)     :: b1
+  integer, dimension(4, 8) :: a1, a2
+  integer, dimension(4)    :: b1
 
   a1 = 0                      ! initialise all elements to zero
   a2 = a1 + 1                 ! all elements of a2(:,:) 
@@ -44,13 +45,15 @@ Given the above declarations, the following would not make sense:
   b1 = a1
 ```
 
-### Exercise (1 minute)
+### Exercise (2 minutes)
 
 A caution. How should we interpret the following assignments?
 ```
   d = 1.0
   e(:) = 1.0
 ```
+Compile the accompanying program `example1.f90`, check the compilation
+errors and improve the program.
 
 ## Elemental intrinsic functions
 
@@ -104,17 +107,31 @@ logical arrays or array expressions:
 Some intrinsic functions have an optional mask argument which can be used to
 restrict the operations to certain elements, e.g.,
 ```
-  b = min(array(:), mask = (array(:) > 0.0))
+  b = min(array(:), mask = (array(:) > 0.0))     ! minimum +ve value
+  n = count(array(:), mask = (array(:) > 0.0))   ! count number of +ve values
 ```
 These may be useful in certain situations.
 
+### Another caution
+
+There may be a temptation to start to construct array expressions of baroque
+complexity, perhaps in the search for brevity. This temptation is probably
+best avoided:
+
+1. Such expressions can become very hard to read and interpret for correctness;
+2. Performance: compilers may struggle to generate the best code if expressions are very complex. Array expressions and constructs may not work in parallel: explicit loops may provide better opportunities.
+
+If array expressions are used, simple ones are best.
 
 ### Exercise (5 minutes)
 
-For this section
+The template `exercise1.f90` re-visits the quadratic equation exercise. Check
+you can replace the scalars where appropriate. See the template for further
+instructions.
 
+Additional exercise: write a program to implement the Sieve of Eratosthenes.
 
-## Mini-exercise (20 minutes)
+https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
-Solve a tri-diagonal system.
-
+See `exercise2.f90` for a template with some further instructions.
+How much array syntax can you reasonably introduce?

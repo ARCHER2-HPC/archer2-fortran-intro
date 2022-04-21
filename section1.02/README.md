@@ -247,6 +247,18 @@ There is not quite the same concept of "reserved words" (cf C/C++);
 lines are split into tokens based on spaces, and tokens are parsed in
 context.
 
+### Complex real and imaginary parts
+
+The real and imaginary parts of a complex variable may be accessed
+```
+  complex :: z
+
+  z%re = 0.0     ! real part
+  z%im = 1.0     ! imaginary part
+```
+where the `%` symbol is referred to as the component selector. The real
+and imaginary parts are also available via the `real()` and `aimag()`
+intrinsic functions, respectively.
 
 ### Exercise (5 minutes)
 
