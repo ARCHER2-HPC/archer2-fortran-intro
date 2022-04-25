@@ -1,8 +1,8 @@
 # Pointers and targets
 
 Pointers are extremely useful for certain types of operations: they
-profile a way to refer indirectly to other variables or names
-(athey act as an _alias_), or can be used for establishing dynamic
+provide a way to refer indirectly to other variables or names
+(they act as an _alias_), or can be used for establishing dynamic
 data structures.
 
 ## Pointer attribute
