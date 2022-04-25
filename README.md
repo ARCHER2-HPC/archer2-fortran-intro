@@ -122,9 +122,12 @@ advertised start and finish times, and the break times.
 | 11:00 | Break |                                                 |                            |
 | 11:30 | Functions: interface blocks, limited polymorphism ...   | [section6.01](section6.01) |
 |       | `interface`, `module procedure`                         |                            |
+| 12:10 | Miscellaneous intrinsic functions                       |                            |
+|       | `get_command_argument()`, `date_and_time()` ...         | [section6.02](section6.02) |
 | 13:00 | Lunch                                                   |                            |
 | 14:00 | Exercises                                               |                            |
 | 15:00 | Break                                                   |                            |
 | 15:30 | Exercises / solutions                                   |                            |
 | 16:00 | Other things you may see; tools; resources              |                            |
 | 16:30 | Finish                                                  |                            |
+
