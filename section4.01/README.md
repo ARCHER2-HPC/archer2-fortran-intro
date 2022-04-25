@@ -74,6 +74,18 @@ This may be initialised and updated in a general way, and the run time
 will keep track of book-keeping. This also (usually) reduces occurances of
 trailing blanks.
 
+If an allocation is required for which only the length is known (e.g.,
+there is no literal string involved), the following form of allocation
+is required:
+```
+  integer :: mylen
+  character (len = :), allocatable :: string
+
+  ! ... establish value of mylen ...
+
+  allocate(character(len = mylen) :: string)
+```
+
 Allocatable strings will automatically be deallocated when they go out
 of scope and are no longer required. One can also be explicit:
 ```
