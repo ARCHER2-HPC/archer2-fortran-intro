@@ -162,6 +162,22 @@ via the `stop` statement. This has an optional message string argument.
 In general one should try to recover by returning control to the caller,
 so `stop` is a last resort. 
 
+## Moving around an open file
+
+It is sometimes useful to be able to reposition oneself in an open file
+so that a given record can be read (or written) more than once. This
+can be done using `backspace()` with the relevant unit number. Formally
+```
+  backspace([unit = ] unit-number [, iostat = iostat] [, err = label])
+```
+This steps back one record.
+
+It is also possible to reposition to the beginning of the file, again
+with the relevant connected unit number using `rewind()`.
+```
+  rewind([unit = ] unit-number [, iostat = iostat] [, err = label])
+```
+
 
 ## Exercise (20 minutes)
 
