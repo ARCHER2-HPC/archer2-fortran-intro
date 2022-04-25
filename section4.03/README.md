@@ -76,6 +76,21 @@ a file exists:
   inquire( file = 'filename.dat', exist = exists)
 ```
 
+## Internal files
+
+In some situations, it may be convient to use a formatted read to
+generate a new string in memory (in the same way as `sprintf` in C).
+Fortran uses a so-called _internal file_, which is usually a
+character string. E.g.,
+```
+   character (len = 10) :: buffer
+   integer              :: ival
+   ...
+   read(buffer, fmt = "i10") ival
+```
+Here `buffer` takes the place of the input unit. This can be used, e.g.,
+to create format strings at run time.
+
 ## Recovery from errors
 
 Operations on external files can be error-prone. While there is no
