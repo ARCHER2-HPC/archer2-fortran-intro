@@ -202,6 +202,29 @@ are not initialised at the point of declaration in Fortran.
 We will look at alternative ways of establishing and moving data
 as we go along.
 
+## Scope again: `block`
+
+It is not possible in Fortran to intermingle declarations and
+executable statements. Specification statements must appear
+at the start of scope before any executable statements. This
+can lead to rather lengthy list of declarations at the start
+of large routines.
+
+It is possible to introduce a local scope which follows executable
+statements using the `block` construct. Schematically:
+```
+   ... some computation ...
+   block
+     integer :: itmp                  ! in scope within the block only
+     ... some more computation ...
+   end block
+   ... some more computation ...
+```
+This can be useful for introducing temporary variables which are only
+required for the duration of a short part of a longer procedure.
+In this way, it acts like `{ .. }` in C.
+
+
 ### Exercise (5 minutes)
 
 Return to your code for the approximation to pi via the Gauss-Legendre

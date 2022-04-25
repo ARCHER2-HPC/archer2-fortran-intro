@@ -47,6 +47,29 @@ support IDEs).
     
 ## Installation
 
+For details of how to log into an ARCHER2 account, see https://docs.archer2.ac.uk/quick-start/quickstart-users/
+
+Check out the git repository to your laptop or ARCHER2 account.
+```
+$ git clone https://github.com/ARCHER2-HPC/archer2-fortran-intro.git
+$ cd archer2-fortran-intro
+```
+The default Fortran compiler on ARCHER2 is the Cray Fortran compiler
+invoked using `ftn`. For example,
+```
+$ cd section1.01
+$ ftn example1.f90
+```
+should generate an executable with the default name `a.out`.
+
+Each section of the course is associated with a different directory,
+each of which
+contains a number of example programs and exercise templates. Answers to
+exercises generally re-appear as templates to later exercises.
+
+Not all the examples compile. Some have deliberate errors which will be
+discussed as part of the course.
+
 ## Timetable
 
 The timetable may shift slightly in terms of content, but we will stick to the
@@ -93,15 +116,18 @@ advertised start and finish times, and the break times.
 | Time  | Content                                                 | Section                    |
 |-------|---------------------------------------------------------|----------------------------|
 | 09:30 | Data structures                                         |                            |
-| 09:30 | `type .. end type`                                      |                            |
-| 10:00 | Pointer attribute and targets                           |                            |
-|       | `pointer`, `null()`, `associated()`                     |                            |
-| 11:00 | Break                                                   |                            |
-| 11:30 | Functions: interface blocks, limited polymorphism ...   |                            |
+|       | `type .. end type`                                      | [section5.01](section5.01) |
+| 10:10 | Pointer attribute and targets                           |                            |
+|       | `null()`, `associated()` `associate .. end associate`   | [section5.02](section5.02) |
+| 11:00 | Break |                                                 |                            |
+| 11:30 | Functions: interface blocks, limited polymorphism ...   | [section6.01](section6.01) |
 |       | `interface`, `module procedure`                         |                            |
+| 12:10 | Miscellaneous intrinsic functions                       |                            |
+|       | `get_command_argument()`, `date_and_time()` ...         | [section6.02](section6.02) |
 | 13:00 | Lunch                                                   |                            |
 | 14:00 | Exercises                                               |                            |
 | 15:00 | Break                                                   |                            |
 | 15:30 | Exercises / solutions                                   |                            |
 | 16:00 | Other things you may see; tools; resources              |                            |
 | 16:30 | Finish                                                  |                            |
+
