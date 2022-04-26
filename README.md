@@ -118,16 +118,17 @@ advertised start and finish times, and the break times.
 | 09:30 | Data structures                                         |                            |
 |       | `type .. end type`                                      | [section5.01](section5.01) |
 | 10:10 | Pointer attribute and targets                           |                            |
-|       | `null()`, `associated()` `associate .. end associate`   | [section5.02](section5.02) |
+|       | `null()`, `associated()`, `associate .. end associate`  | [section5.02](section5.02) |
 | 11:00 | Break |                                                 |                            |
 | 11:30 | Functions: interface blocks, limited polymorphism ...   | [section6.01](section6.01) |
 |       | `interface`, `module procedure`                         |                            |
-| 12:10 | Miscellaneous intrinsic functions                       |                            |
+| 12:20 | Miscellaneous intrinsic functions                       |                            |
 |       | `get_command_argument()`, `date_and_time()` ...         | [section6.02](section6.02) |
+| 12:40 | Mini-exercise on conjugate gradient ...                 |                            |
+|       | .. and larger matrices                                  | [section6.03](section6.03) |
 | 13:00 | Lunch                                                   |                            |
 | 14:00 | Exercises                                               |                            |
 | 15:00 | Break                                                   |                            |
 | 15:30 | Exercises / solutions                                   |                            |
-| 16:00 | Other things you may see; tools; resources              |                            |
+| 16:00 | Other things you may see; testings; resources           | [section7.01](section7.01) |
 | 16:30 | Finish                                                  |                            |
-

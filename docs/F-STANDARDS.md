@@ -1,4 +1,4 @@
-# Some signficant dates
+# Some significant dates
 
 
 * Early 1950s: IBM Mathemetical Formula Translating System, FORTRAN (1954). Variously FORTRAN II, FORTRAN IV.
