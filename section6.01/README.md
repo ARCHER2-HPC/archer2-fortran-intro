@@ -229,7 +229,7 @@ an integer array. Refactor this part of the code to use an elemental function.
 ## Exercise (20 minutes)
 
 Write a module/program to perform a very simple numerical integration
-of a simple one-dimrnsional function _f(x)_. We can use a
+of a simple one-dimensional function _f(x)_. We can use a
 trapezoidal rule: for lower and upper limits _a_ and _b_, the
 integral can be approximated by
 ```
