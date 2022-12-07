@@ -96,7 +96,7 @@ often have prototypes of the form:
   int MPI_Send(const void * buf, int ount, MPI_Datatype dt, int dest, int tag,
                MPI_Comm comm);
 ```
-The data to be sent is indentified here using `void * buf`. A return code
+The data to be sent is identified here using `void * buf`. A return code
 provides an error status.
 
 The lack of `void *` in Fortran means that the Fortran API, formally, has
@@ -104,7 +104,7 @@ been on a rather shaky foundation for a long time. This is being addressed
 in the most recent standards.
 
 In particular, the use of array sections as the `buf` argument might prove
-problematic and should probably be avoided. It is also preferrable for the
+problematic and should probably be avoided. It is also preferable for the
 application to marshall data into a contguous buffer for performance
 reasons.
 

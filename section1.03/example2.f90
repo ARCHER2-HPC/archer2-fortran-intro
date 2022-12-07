@@ -14,6 +14,6 @@ program example2
 
   print *, "Catenated:       ", string3//string2//string1
   print *, "Substring:       ", string2(1:2)
-  print *, "kind('A'):       ", kind('A')     
-  
+  print *, "kind('A'):       ", kind('A')
+
 end program example2

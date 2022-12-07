@@ -194,7 +194,7 @@ implicitly take on the Fortran `save` attribute. This means the
 variable is placed in heap memory and retains its value between calls.
 (Analogous to a `static` declaration in C.) This is certainly neither
 thread-safe nor re-entrant. Uninitialised variables appear on the stack
-(and dissappear) as expected.
+(and disappear) as expected.
 
 For this reason it is the rule, rather than the exception, that variables
 are not initialised at the point of declaration in Fortran.
@@ -230,7 +230,7 @@ In this way, it acts like `{ .. }` in C.
 Return to your code for the approximation to pi via the Gauss-Legendre
 iteration (or use the template
 [section2.02/exercise1.f90](../section2.02/exercise1.f90)).
-Using the exmaples above as a template, write a module to contain a
+Using the examples above as a template, write a module to contain a
 function which returns the value so computed.
 Check you can use the new function from a main program.
 

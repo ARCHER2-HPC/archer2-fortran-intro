@@ -2,7 +2,8 @@
 
 The ability to aggregate related data in a structure is important.
 Fortran offers the _derived type_ in addition to intrinsic types.
-In its simplest form, one may think of this a simple C `struct`.
+In its simplest form, one may think of this as the analogue to a
+C `struct`.
 
 Derived types also form the basis of aggregation of data and related
 operations or procedures (viz. object-oriented programming); however,
@@ -152,7 +153,7 @@ What happens if you make the components of the type `private`?
 What would you then have to provide to allow initialisation?
 
 
-## Type default input/output
+## Default input/output for derived types
 
 List-directed output for derived types can be used to provide a
 default output in which each component appears in order, schematically:
@@ -178,7 +179,7 @@ For example we may have
   dt" my-type: "(2,14)
 ```
 The _iodesc-string_ and _v-list_ will re-appear as arguments to
-a specfial function which must be provided by the programmer.
+a special function which must be provided by the programmer.
 Information on this function is provided as part of the _procedure-part_
 of the type definition:
 ```
@@ -190,7 +191,7 @@ contains
   generic   :: write(formatted) => my_type_write_formatted
 end type my_type
 ```
-The following module suborutine should then be provided:
+The following module subroutine should then be provided:
 ```
   subroutine my_type_write_formatted(self, unit, iotype, vlist, iostat, iomsg)
 
@@ -220,7 +221,7 @@ tri-diagonal matrix, ie., at least the three diagonals.
 
 Define a function which returns a fully initialised matrix type based
 on arrays holding the three diagonals. Refactor the solver routine to
-use the use matrix type.
+use the new matrix type.
 
 Additional exercise: A very simple tridiagonal matrix may have all
 diagonal elements the same, and all off-diagonal elements the same.

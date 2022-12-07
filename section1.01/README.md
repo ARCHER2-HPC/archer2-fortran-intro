@@ -43,7 +43,7 @@ follows that the shortest standard-conforming program will be (see
 ```
 end
 ```
-If the `program-name` is present, it must be at both the begining and
+If the `program-name` is present, it must be at both the beginning and
 the end, and must be the same in both places.
 
 We will return to the `contains` statement in the context of modules.
@@ -88,7 +88,7 @@ Formally,
   use [[ , module-nature] ::] module-name [ , only : [only-list]]
 ```
 If `module-nature` is present, it must be either `intrinsic` or
-`non_intrinsic`. The implementation must provide certain instrinsic
+`non_intrinsic`. The implementation must provide certain intrinsic
 modules such `iso_fortran_env`.
 
 There is no formal namespace mechanism in Fortran (cf. C++), so

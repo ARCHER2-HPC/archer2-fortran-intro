@@ -17,7 +17,7 @@ program exercise2
   !
   ! E.g. T. Papanastasiou, G. Georiou, and A. Alexandrou,
   ! "Viscous Fluid Flow" CRC Press, Boca Raton, Florida (2000).
-  
+
   !  Exercise
   !  Compute the first term in the series (i.e., k = 1):
   !
@@ -31,6 +31,6 @@ program exercise2
   !  depending on precision).
 
   !  Try for both real32 and real64.
-  !  Does your compiler support kind real128? 
+  !  Does your compiler support kind real128?
 
 end program exercise2

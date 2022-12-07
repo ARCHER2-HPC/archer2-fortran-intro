@@ -12,5 +12,5 @@ program example1
   print *, "len_trim(file_stub):   ", len_trim(file_stub)
 
   print *, "File name: ", trim(file_stub)//"."//file_ext(1:3)
-  
+
 end program example1

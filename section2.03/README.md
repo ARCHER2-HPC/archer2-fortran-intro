@@ -9,7 +9,7 @@ for such operations.
 A general subset of array elements, an _array section_,  may be constructed
 from the triplet
 ```
-  [subscript] : [subscript] [: stride] 
+  [subscript] : [subscript] [: stride]
 ```
 Given a rank 1 array `a(:)`, some valid array sub-objects are:
 ```
@@ -31,7 +31,7 @@ arrays. For example:
   integer, dimension(4)    :: b1
 
   a1 = 0                      ! initialise all elements to zero
-  a2 = a1 + 1                 ! all elements of a2(:,:) 
+  a2 = a1 + 1                 ! all elements of a2(:,:)
   a1 = 2*a1                   ! multiplied element-wise
 
   b1 = a1(:, 1)               ! b1 set to first column of a1
@@ -57,7 +57,7 @@ errors and improve the program.
 
 ## Elemental intrinsic functions
 
-Many instrinsic functions are _elemental_: that is, a call with a scalar
+Many intrinsic functions are _elemental_: that is, a call with a scalar
 argument will return a scalar, while a call with an array argument will
 return an array with the result of the function for each individual
 element of the argument.

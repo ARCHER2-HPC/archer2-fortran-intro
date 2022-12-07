@@ -31,7 +31,7 @@ program exercise
 
   ! Solve via Thomas' algorithm
   ! Note b(:) and d(:) are destroyed
-  
+
   do i = 2, nmax
     w = a(i) / b(i-1)
     b(i) = b(i) - w*c(i-1)

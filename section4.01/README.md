@@ -1,7 +1,7 @@
 # More on characters and strings
 
 String-handling can be a headache if there is no mechanism to keep
-track of the length of the string. 
+track of the length of the string.
 
 
 ## Useful `character` operations
@@ -43,7 +43,7 @@ concatenating fixed-length character strings:
 ```
 
 It's also useful if you want to perform an operation on each individual
-character, e..g,
+character, e.g.,
 ```
   do n = 1, len_trim(string)
     if (string(n:n) == 'a') counta = counta + 1
@@ -71,7 +71,7 @@ flexible basis is the deferred length character:
   string(:) = ''          ! Keep same allocation, but set all blanks
 ```
 This may be initialised and updated in a general way, and the run time
-will keep track of book-keeping. This also (usually) reduces occurances of
+will keep track of book-keeping. This also (usually) reduces occurrences of
 trailing blanks.
 
 If an allocation is required for which only the length is known (e.g.,
@@ -95,7 +95,7 @@ if wanted.
 
 ## Arrays of strings
 
-We have seen that we can defined a fixed length parameter, e.g.,:
+We have seen that we can define a fixed length parameter, e.g.,:
 ```
   character (len = *), parameter :: day = "Sunday"
 ```
@@ -115,7 +115,7 @@ to use a constructor with a type specification:
 ```
 [character (len = 9) :: "Sunday", "Monday", "Tuesday", "Wednesday", ...]
 ```
-Here the type specfication is used to avoid ambiguity in how the
+Here the type specification is used to avoid ambiguity in how the
 list is to be interpreted.
 
 Check you can make this adjustment to `example3.f90`.
@@ -123,7 +123,7 @@ Check you can make this adjustment to `example3.f90`.
 
 ## Strings as dummy arguments, or results
 
-In a character variable has intent `in` in the context of a procedure,
+If a character variable has intent `in` in the context of a procedure,
 it typically may be declared:
 ```
   subroutine some_character_operation(carg1, ...)

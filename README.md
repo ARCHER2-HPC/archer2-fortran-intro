@@ -44,7 +44,7 @@ support IDEs).
 [1] This may typically be gfortran, freely available as part of
     Gnu Compiler Collection (GCC).
     See e.g., https://gcc.gnu.org/wiki/GFortranBinaries
-    
+
 ## Installation
 
 For details of how to log into an ARCHER2 account, see https://docs.archer2.ac.uk/quick-start/quickstart-users/
@@ -132,5 +132,5 @@ advertised start and finish times, and the break times.
 |       | .. and larger matrices                                  | [section6.03](section6.03) |
 | 15:00 | Break                                                   |                            |
 | 15:30 | Exercises / solutions                                   |                            |
-| 16:00 | Other things you may see; testings; resources           | [section7.01](section7.01) |
+| 16:00 | Other things you may see; testing; resources            | [section7.01](section7.01) |
 | 16:30 | Finish                                                  |                            |

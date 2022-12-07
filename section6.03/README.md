@@ -6,12 +6,12 @@ These exercises can, largely, be done in any order.
 
 The conjugate gradient method provides a slightly more general
 method for the solution of linbear systems _Ax = b_ for symmetric
-matrices. The alogrithm is explained here:
+matrices. The algorithm is explained here:
 
 https://en.wikipedia.org/wiki/Conjugate_gradient_method
 
 It is not necessary to understand the details, as we are just
-interested in implmenting the algorithm.
+interested in implementing the algorithm.
 
 There are two main steps involved. The first is to perform a
 matrix-vector multiplication. This can be done using the Fortran
@@ -81,7 +81,7 @@ If you look at the fist few line of this example, you should see
 
 * Define a type that can hold the sparse representation
 and provide a procedure which initialises such a type from a
-file. 
+file.
 
 * Provide a procedure which brings into exsitance a dense matrix
 (just a two-dimensional array) initialised with the correct non-zero

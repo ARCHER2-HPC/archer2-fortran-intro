@@ -75,7 +75,7 @@ simply to be overwritten, use `intent(out)`, e.g.:
   end subroutine assign_x
 ```
 The `intent` attribute, as well as allowing the compiler to detect
-inadvertant errors, provides some useful documentation for the
+inadvertent errors, provides some useful documentation for the
 reader.
 
 Local variables do not have intent; otherwise, they are declared as
@@ -107,7 +107,7 @@ Formally,
 [prefix] function function-name (dummy-arg-list) [suffix]
   [ specification-part ]
   [ executable-part ]
-end [ function [function-name] ] 
+end [ function [function-name] ]
 ```
 As ever, there is some elasticity in the exact form of the declarations
 you may see. In particular, older versions did not have the `result()`
@@ -151,7 +151,7 @@ recursive function fibonacci(n) result(nf)
   nf = fibonacci(n-1) + fibonacci(n-2)
 end function fibonacci
 ```
-Such a declaration must be included for both direct or indirect recusion.
+Such a declaration must be included for both direct or indirect recursion.
 
 ## Subroutines
 

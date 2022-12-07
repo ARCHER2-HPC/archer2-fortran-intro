@@ -41,17 +41,17 @@ any given time.
 
 ### `open()`
 
-There arguments seen above include:
+The arguments seen above include:
 * `file`: literal string or character variable or expression with the name of
 the file in the file system;
 * `form`: `formatted` or `unformatted`;
 * `action`: `read`, `write` or `readwrite`. An error may occur if inappropriate actions are performed;
-* `status`: one of "old", "new", "replace", "scratch", or `unknown`.
+* `status`: one of `old`, `new`, `replace`, `scratch`, or `unknown`.
 
 A file with status `old` is expected to exist, while an attempt to create a
 `new` file when one already exists with the same name will result in an error.
-If `replace` is specified, any exsiting file will be overwritten by a new
-file. If `scratch` is specifed, a temporary file is created which will
+If `replace` is specified, any existing file will be overwritten by a new
+file. If `scratch` is specified, a temporary file is created which will
 be deleted when `close()` is executed (or at the end of the program).
 The system will automatically choose a name for a scratch file if no
 `file` argument is present. The default status is `unknown`, which
@@ -67,7 +67,7 @@ scratch files.
 
 ## `inquire()`
 
-The `inquire` statements offers a way to obtain information on the
+The `inquire` statement offers a way to obtain information on the
 current state of either unit numbers or files. There are a large
 number of optional arguments. One common usage is to check whether
 a file exists:
@@ -94,7 +94,7 @@ to create format strings at run time.
 ## Recovery from errors
 
 Operations on external files can be error-prone. While there is no
-formal exception machanism in Fortran, some ability to recover is
+formal exception mechanism in Fortran, some ability to recover is
 available.
 
 Consider the following schematic example:
@@ -119,7 +119,7 @@ subroutine read_my_file_format(myunit, ..., ierr)
   return
 end subroutine real_my_file_format
 ```
-We assume the relevant file has been openned successfully, and is
+We assume the relevant file has been opened successfully, and is
 connected to unit number `myunit`. If an error occurs at the
 point of the read statement, the `err` argument directs control
 to be transferred to the statement will label `999`. In this
@@ -162,6 +162,7 @@ are illustrated here:
 * `iomsg`: should return a useful message on error.
 
 The two negative `iostat` cases can be distinguished via calls to
+the intrinsic functions
 ```
   is_iostat_end(ierr)
   is_iostat_eor(ierr)
@@ -175,7 +176,7 @@ via the `stop` statement. This has an optional message string argument.
   stop "Cannot continue"
 ```
 In general one should try to recover by returning control to the caller,
-so `stop` is a last resort. 
+so `stop` is a last resort.
 
 ## Moving around an open file
 
@@ -215,4 +216,3 @@ as in the template program. Note the template program expects a module
 
 Additional exercises: repeat for integer data (to "P2" format `.pgm`)
 and floating point data (to "P3" format `.ppm`).
-

@@ -1,12 +1,12 @@
 program exercise1
 
   ! Compute an approximation to pi.
-  
+
   ! An approximation using the Gauss-Legendre algorithm
   ! See, e.g., https://en.wikipedia.org/wiki/Pi
   !
   ! Add an iteration which computes successive approximations
-  ! to pi (say the first 5 ot 6)
+  ! to pi (say the first 5 or 6)
   !
   ! Try extended precision kind(1.d0)
   ! Can you add a condition that will exit the iteration when
@@ -35,5 +35,5 @@ program exercise1
   p = 2.0*p
 
   print *, "Approximation pi_1: ", (a + b)**2/(4.0*t)
-  
+
 end program exercise1

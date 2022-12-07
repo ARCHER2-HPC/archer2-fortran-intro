@@ -5,7 +5,7 @@ Fortran provides the following intrinsic data types: numeric types `integer`,
 
 ## Numeric variables of intrinsic type
 
-The following program declares a variable with each of the three instrinsic
+The following program declares a variable with each of the three intrinsic
 numeric types, and provides an initial value in each case.
 ```
 program example1
@@ -39,7 +39,7 @@ declared.  So, the default situation can be represented by
 ```
   implicit integer (i-n), real (a-h, o-z)
 ```
-that is, variables with names begining with letters `i-n` are implicitly
+that is, variables with names beginning with letters `i-n` are implicitly
 of type `integer`, while anything else is of type `real` (unless
 explicitly declared otherwise).
 
@@ -63,11 +63,11 @@ the problem.
 ### `kind` of type
 
 The declarations above give us variables of some (implementation-defined)
-default type (typically 4-byte integers, 4-bytes reals). A mechanism to
+default type (typically 4-byte integers, 4-byte reals). A mechanism to
 control the exact kind, or representation,  is provided. For example
 (see `example2.f90`),
 ```
-  use iso_fortran_env, only : int32, real64
+  use iso_fortran_env, only : int64, real64
   implicit none
 
   integer (kind = int64)   :: i = 100
@@ -132,7 +132,7 @@ Floating point literal constants can take a number of forms. Examples are:
 3.14d+1           ! Scientific notation extended precision
 ```
 
-Complex literals are contructed with real and imaginary parts, with each
+Complex literals are constructed with real and imaginary parts, with each
 part real.
 ```
 (0.0, 1.0)        ! square root of -1
@@ -146,7 +146,7 @@ the code. Consider:
 program example3
 
   implicit none
-  
+
   integer, parameter :: my_e_k = kind(1.e0)
   integer, parameter :: my_d_k = kind(1.d0)
 
@@ -204,7 +204,7 @@ remove the offending line.
 ### Arithmetic operations on numeric types
 
 For all intrinsic numeric types, standard arithmetic operations,
-addition (`+`), substraction (`-`), multplication (`*`) and
+addition (`+`), subtraction (`-`), multplication (`*`) and
 division (`/`) are defined, along with exponents (`**`) and
 negation (`-`).
 
@@ -212,7 +212,7 @@ In order of increasing precedence these are `-`, `+`, `/`, `*`,
 and `**` (otherwise left-to-right). In particular
 ```
    a = b*c**2    ! is evaluated as b*(c**2)
-   a = b*c*d     ! evaluted left-to-right (b*c)*d
+   a = b*c*d     ! evaluated left-to-right (b*c)*d
 ```
 Use parentheses to avoid ambiguity if necessary.
 
@@ -229,7 +229,7 @@ is via intrisic functions, e.g.,
    integer          :: i = 1
    complex (real64) :: z = (1.0, 1.0)
    real    (real64) :: a, b
-   
+
    a = real(i, real64)          ! a should be 1.d0
    a = real(z, real64)          ! imaginary part is ignored
 
@@ -237,7 +237,7 @@ is via intrisic functions, e.g.,
 
    z = cmplx(a, b)              ! (sic) Form complex number from two reals
 ```
-The second argument of the `real()` function is optional, and specfies the
+The second argument of the `real()` function is optional, and specifies the
 kind type parameter of the desired result. If the optional argument is not
 present, then a real value of the default kind is returned.
 
@@ -273,5 +273,3 @@ Instructions are in `exercise4.f90`.
 
 The results of these exercises will be used in later problems (some
 solutions will also be provided).
-
-
