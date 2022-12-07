@@ -164,6 +164,7 @@ to `write()`, e.g.:
   write (*, "('Input an integer: ')", advance = 'no')
   read (*, *) ivar
 ```
+Non-advancing output must not use list-directed I/O.
 
 ## Statement labels
 
