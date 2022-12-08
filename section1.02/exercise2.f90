@@ -9,7 +9,7 @@ program exercise2
   complex, parameter :: zi = (0.0, 1.0)        ! square root of -1
 
   nmax = 33
-  
+
   print *, "The value of nmax:   ", nmax
   print *, "The value of pi:     ", pi
   print *, "The value of ci:     ", zi

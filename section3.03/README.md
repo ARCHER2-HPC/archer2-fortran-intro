@@ -10,7 +10,7 @@ are arrays.
 One is entitled to make explicit the shape of an array in a procedure
 definition, e.g.,
 ```
-  suborutine array_action1(nmax, a)
+  subroutine array_action1(nmax, a)
     integer, intent(in)                    :: nmax
     real, dimension(1:nmax), intent(inout) :: a
     ...
@@ -62,9 +62,9 @@ What do you think was the intention of the programmer? What remedies
 are available?
 
 
-### Auotmatic arrays
+### Automatic arrays
 
-One is allowed to bring into existance `automatic' arrays on the stack.
+One is allowed to bring into existence `automatic' arrays on the stack.
 These are usually related to temporary workspace, e.g.,
 ```
 subroutine array_swap1(a, b)

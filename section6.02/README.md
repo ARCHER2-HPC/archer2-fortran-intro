@@ -8,14 +8,14 @@ are useful in certain contexts.
 ### Command line arguments
 
 If you wish to write a program which makes use of command line arguments,
-or simply wich to know the executable name at run time, the command line
+or simply wish to know the executable name at run time, the command line
 can be retrieved.
 
 The number of command line arguments is returned by the function
 ```
 command_argument_count()
 ```
-This returns and `integer`: zero if the information is not available,
+This returns an `integer`: zero if the information is not available,
 or the number of arguments _not including_ the executable name itself.
 
 The entire command line can be retrieved as a string via
@@ -43,7 +43,7 @@ the length of the command, and `istat` returns 0 on success, -ve if the
 
 ### Environment variables
 
-A similar routine exists for inquiry about environemnt variables
+A similar routine exists for inquiry about environment variables
 ```
 subroutine get_environment_varaible(name, value, length, status, trim_name)
   character (len = *),           intent(in)  :: name
@@ -52,8 +52,10 @@ subroutine get_environment_varaible(name, value, length, status, trim_name)
   integer,             optional, intent(out) :: status
   logical,             optional, intent(in)  :: trim_name
 ```
-This will return the value associated with the given name if it exsits.
-Various non-zero `status` error conditions can occur.
+This will return the value associated with the given name if it exists.
+Various non-zero `status` error conditions can occur, including a value
+of `1` if the variable does not exist, or `-1` if the value is present,
+but is too long to fit in the string provided.
 
 
 ### System commands
@@ -78,7 +80,8 @@ The `icmd` argument returns a positive value if the command fails to execute
 or zero on successful execution. An informative message should be returned in
 `cmdmsg` if `icmd` is positive.
 
-It is recommended to use `wait = .true.` always.
+It is recommended to use `wait = .true.` always. Portable programs should
+use system commands with extreme caution, or not at all.
 
 
 ### Time and date from `date_and_time()`
@@ -106,7 +109,7 @@ and milliseconds (0-999).
 ## Timing pieces of code
 
 If you want to record the time taken to execute a particular section
-of code, the `cpu-time()` function can be used. This returns a
+of code, the `cpu_time()` function can be used. This returns a
 `real` positive value which is some system-dependnent time in seconds.
 Subtracting two consecutive values will give and elapsed time:
 ```
@@ -116,7 +119,7 @@ Subtracting two consecutive values will give and elapsed time:
    ! ... code to be timed here ...
    call cpu_time(t1)
 
-   print *, "That piece of code took ", t1-t0, "seconds"
+   print *, "That piece of code took ", t1-t0, " seconds"
 ```
 In the unlikely event that there is no clock available, a negative
 value may be returned from `cpu_time()`.
@@ -124,7 +127,8 @@ value may be returned from `cpu_time()`.
 
 ## Exercise (10 minutes)
 
-Write a program to display the command line arguments to the program.
+Write a program to display the command line arguments of the program.
+The arguments should not be truncated.
 How can you deal with the fact that the length of the strings is not
 known in advance?
 

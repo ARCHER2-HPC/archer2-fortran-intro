@@ -52,7 +52,7 @@ it explicit, the `interface` construct is available:
     ...
 ```
 This has provided a full, explicit, statement about the interface of the
-function `my_mappping()`. (Note that the dummay argument names are not
+function `my_mappping()`. (Note that the dummy argument names are not
 significant, but the function name is.)
 
 The compiler should now be able to check the arguments are used correctly
@@ -70,7 +70,7 @@ Compile the two files, e.g.:
 ```
 $ ftn external.f90 program.f90
 ```
-(note that there are no modules involves, no `.mod` files will appear).
+(note that there are no modules involved, and no `.mod` files will appear).
 What is the result when you try to run the program?
 
 Try adding the appropriate `external` declaration
@@ -131,7 +131,7 @@ names; suppose we have two module sub-programs, schematically:
      ... real implementation ...
    end subroutine my_specific_real
 ```
-A mechanism exsits to allow the compiler to identify the correct routine
+A mechanism exists to allow the compiler to identify the correct routine
 based on the actual argument when used with a _generic name_. This is:
 ```
   interface my_generic_name
@@ -141,15 +141,15 @@ based on the actual argument when used with a _generic name_. This is:
   end interface my_generic_name
 ```
 This should appear in the specification part of the relevant module.
-The two specfic implementations must be distinguishable by the compiler,
+The two specific implementations must be distinguishable by the compiler,
 that is, at least one none-optional dummy argument must be different.
 
 ### Exercise
 
-In section4.03, we wrote a module to write a `.pnm` image file. The
+In section4.03, we wrote a module to produce a `.pnm` image file. The
 accompanying module `pbm_image.f90` provides two implementations
 of such a routine: one for a logical array, and another for an integer
-array. 
+array.
 
 Check you can add the appropriate `interface` block with the generic
 name `write_pbm` to allow the program `example3.f90` to be compiled
@@ -177,7 +177,7 @@ One can write a function to do this:
     type (my_date), intent(in) :: date2
     logical                       equal
     ! ...
-  end fucntion my_dates_equal
+  end function my_dates_equal
 ```
 As a syntactic convenience, it might be useful to use `==` in a logical
 expression using dates. This can be arranged via
@@ -188,10 +188,10 @@ expression using dates. This can be arranged via
 ```
 Again this should appear in the relevant specification part of the
 relevant module. Such overloading is possible for relational operators
-`==`, `/=`, `>=`, `<=`, `>` and `<`. If appropriate overloading is also
+`==`, `/=`, `>=`, `<=`, `>` and `<`. If appropriate, overloading is also
 available for arithmetic operators `+`, `-`, `*`, and `/`.
 
-It is also possible to overload assignemnt `=`.
+It is also possible to overload assignment `=`.
 
 
 ## Elemental functions

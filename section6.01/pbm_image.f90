@@ -17,7 +17,7 @@ contains
 
     ivar = 0
     if (lvar) ivar = 1
-    
+
   end function logical_to_pbm
 
   pure function integer_to_pbm(ival) result(ilog)

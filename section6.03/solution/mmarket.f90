@@ -67,7 +67,7 @@ contains
     end do
 
     close(myunit, status = 'keep')
-    
+
   end function mm_matrix_from_file
 
 end module mmarket

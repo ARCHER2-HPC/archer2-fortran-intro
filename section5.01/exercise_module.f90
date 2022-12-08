@@ -37,7 +37,7 @@ contains
     rlocal(1:nmax) = rhs(1:nmax)
 
     ! Solve via Thomas' algorithm
-  
+
     do i = 2, nmax
       w = a(i) / blocal(i-1)
       blocal(i) = blocal(i) - w*c(i-1)

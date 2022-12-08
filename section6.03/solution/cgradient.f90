@@ -36,7 +36,7 @@ contains
 
     if (rsqold < tol) then
        ! x(:) is the solution...
-    else 
+    else
 
        p(:) = r(:)
        do
@@ -61,7 +61,7 @@ contains
        end do
        ! x(:) is the solution ...
     end if
-    
+
   end subroutine cg_solve
 
 end module cgradient

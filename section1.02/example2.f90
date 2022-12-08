@@ -4,7 +4,7 @@ program example2
   ! to determine the precision of variables.
 
   ! Note that the use statement must be before the implicit none,
-  ! which should preceed the declarations.
+  ! which should precede the declarations.
 
   use iso_fortran_env, only : int64, real64
   implicit none

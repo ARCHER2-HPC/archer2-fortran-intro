@@ -7,8 +7,8 @@ data structures.
 
 ## Pointer attribute
 
-A pointer may be declared by added the `pointer` attribute to
-the relevant data type, e.g., 
+A pointer may be declared by adding the `pointer` attribute to
+the relevant data type, e.g.,
 ```
 integer, pointer :: p => null()
 ```
@@ -40,7 +40,7 @@ and so on.
 
 ## Targets
 
-A pointer may be assoicated with another variable of the appropriate
+A pointer may be associated with another variable of the appropriate
 type (which is not itself a pointer) by using the target attribute:
 ```
   integer, target  :: datum
@@ -58,7 +58,7 @@ standard assignment would be
   p => datum     ! pointer assignment
   p = 2          ! normal assignment
 ```
-leaves us with `datum = 2`. There is no deferencing in the C fashion;
+leaves us with `datum = 2`. There is no dereferencing in the C fashion;
 the data is moved as the result of the normal assignment.
 
 The target attribute is there to provide information to the compiler
@@ -68,9 +68,9 @@ C `restrict` qualifier.
 
 Note that there is an optional _target_ argument to the `associated()`
 intrinsic, which allows the programmer to inquire whether a pointer
-is associated with a specfic target, e.g.,
+is associated with a specific target, e.g.,
 ```
-   associated(p, target = datum)   ! .true. following the code above
+   associated(p, target = datum)   ! .true. if p => datum
 ```
 
 ### Exercise (2 minutes)
@@ -96,7 +96,7 @@ use the `associate` construct, e.g.:
   end associate
 ```
 Note that there is no requirement here to have the `target` attribute
-in the original declaration (a there's no explicit declaration of `p`).
+in the original declaration (and there's no explicit declaration of `p`).
 Any update to `p` in the associate block will be reflected in the
 target on exit.
 
@@ -200,6 +200,3 @@ should be a rank one array section of type `real`.
 A thought exercise. How many copies would be required if `move_alloc()`
 was not available when enlarging the size of an existing allocatable
 array?
-
-
-

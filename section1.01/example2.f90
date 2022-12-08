@@ -8,5 +8,5 @@
   !
   ! So this is the shortest standard conforming program (not very interesting)
   ! We recommend sticking to program ... end program
-  
+
 end

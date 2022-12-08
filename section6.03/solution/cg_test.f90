@@ -6,7 +6,7 @@ program cg_test
   implicit none
 
   integer, parameter :: nmax = 4
-  
+
   real (k_real), dimension(nmax, nmax) :: a
   real (k_real), dimension(nmax)       :: b
   real (k_real), dimension(nmax)       :: x
@@ -29,5 +29,5 @@ program cg_test
   print *, "ierr:    ", ierr
   print *, "Solution ", x(:)
   print *, "Check b:  ", matmul(a, x)
-  
+
 end program cg_test

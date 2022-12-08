@@ -1,7 +1,7 @@
 program exercise1
 
   ! Exercise to introduce array storage
-  
+
   ! Here's a version of the pi program
   ! See, e.g., https://en.wikipedia.org/wiki/Pi
   !
@@ -9,7 +9,7 @@ program exercise1
   !
   !   a_0 = 1, b_0 = 1/sqrt(2), t_0 = 1/4, p_0 = 1
   !
-  ! and perform the iteration  
+  ! and perform the iteration
   !
   !   a_{n+1} = (a_n + b-n)/2
   !   b_{n+1} = sqrt(a_n b_n)
@@ -24,7 +24,7 @@ program exercise1
   ! appropriate size for the quantities a, b, and t. Use a first
   ! loop to assign values to these three quantities.
 
-  
+
   implicit none
 
   integer, parameter :: kp = kind(1.d0)
@@ -36,8 +36,8 @@ program exercise1
 
   real (kp) :: an
   integer   :: n = 0
-  
-  do 
+
+  do
     print *, "Approximation n, pi: ", n, (a + b)**2/(4.0*t)
     if (n > 10) exit
 
@@ -49,5 +49,5 @@ program exercise1
     p = 2.0*p
     n = n + 1
   end do
-  
+
 end program exercise1

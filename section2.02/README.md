@@ -1,7 +1,7 @@
 # Arrays
 
 Unlike C, which often uses pointers to handle array data, Fortran has arrays
-which are an instrinsic feature of the language.
+which are an intrinsic feature of the language.
 
 ## A one-dimensional array
 
@@ -45,7 +45,7 @@ in the first dimension (or _extent_ 2), and 3 elements in the second
 dimension (_extent_ 3). It is said to have _shape_ (2,3), which is
 the sequence of extents in each dimension. Its size is 6 elements.
 
-The is an array element order which in which we expect the implementation
+There is an array element order which in which we expect the implementation
 to store contiguously in memory. In Fortran this has be left-most
 dimension counting fastest. For array `a` we expect the order in
 memory to be
@@ -83,7 +83,7 @@ the _allocatable_ attribute can be used. The rank must be specified:
 
   deallocate(a)
 ```
-Again, this array will take on the defualt lower bound of 1 in each
+Again, this array will take on the default lower bound of 1 in each
 dimension.
 
 Formally,
@@ -109,7 +109,7 @@ status can be interrogated via the intrinsic function `allocated()`.
     ! ... we can do something ...
   end if
 ```
-Attempt to `deallocate` a varaible which is not allocated is an error.
+Attempt to `deallocate` a variable which is not allocated is an error.
 
 
 ### Exercise (5 minutes)
@@ -125,4 +125,3 @@ In a second loop, compute the approximation of pi at each iteration.
 
 What might you do if you wanted to storage only the number of terms
 taken to reach a converged answer?
-

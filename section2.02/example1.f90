@@ -8,10 +8,10 @@ program example1
   real, dimension(3)    :: a1
   real, dimension(-2:1) :: b1
 
-  integer, dimension(2,3) :: m = reshape([ 1, 2, 3, 4, 5, 6], shape = [2,3]) 
+  integer, dimension(2,3) :: m = reshape([ 1, 2, 3, 4, 5, 6], shape = [2,3])
 
   ! Fixed arrays with constructors
-  integer, dimension(3), parameter :: s = (/ -1, 0, +1 /)  ! F2003 or   
+  integer, dimension(3), parameter :: s = (/ -1, 0, +1 /)  ! F2003 or
   integer, dimension(3), parameter :: t =  [ -1, 0, +1 ]   ! F2008
 
   integer :: i, j

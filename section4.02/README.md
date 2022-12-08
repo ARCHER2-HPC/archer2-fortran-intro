@@ -1,6 +1,6 @@
 # Formats and edit descriptors
 
-Control over the appearence of output is via the format specifier,
+Control over the appearance of output is via the format specifier,
 which is a string. This similar in spirit to the format string
 provided to `printf()` in C. The use of a format allows predictable
 tabulation of output for human readers.
@@ -57,7 +57,7 @@ some common examples of the three different types of descriptor.
 
 ### Data edit descriptors
 
-Data edit descriptors feature a single character decribing the type
+Data edit descriptors feature a single character describing the type
 data format wanted, and a literal integer part indicating the total
 field width, and number of decimals. These include
 ```
@@ -71,7 +71,7 @@ accommodate any leading signs, decimal points, or exponents. Where there
 is a _w.d_ the _d_ indicates the number of digits to appear after the
 decimal point.
 
-Data edit desriptors should correspond to the relevant item in the _io-list_,
+Data edit descriptors should correspond to the relevant item in the _io-list_,
 based on position. Some simple examples are:
 ```
   integer :: ivar = 40
@@ -135,7 +135,7 @@ width. What's the result? What's the solution?
 
 ## Repeat counts
 
-For a larger number of items of the same type, it can be useful to specifiy
+For a larger number of items of the same type, it can be useful to specify
 a _repeat count_. Simply prefix a literal integer count to the format, e.g.:
 ```
    real, dimension(4) :: a = [ 1.0, 2.0, 3.0, 4.0]
