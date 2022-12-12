@@ -27,7 +27,7 @@ program exercise4
   !
   !  You will need the intrinsic function tanh() for hyperbolic tangent.
   !
-  !  Your result should be in the region of 97227.88 ( the exact figure
+  !  Your result should be in the region of 97277.88 ( the exact figure
   !  depending on precision).
 
   !  Try for both real32 and real64.
