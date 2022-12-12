@@ -264,7 +264,7 @@ intrinsic functions, respectively.
 
 By using variables of complex type, check that you can use the
 intrinsic function `srqt()` to confirm that the square root of
--1 is `i`. What happens if you try to try to take the squre root
+-1 is `i`. What happens if you try to try to take the square root
 of a negative value stored as a real variable?
 
 ### Exercise (5 minutes)
