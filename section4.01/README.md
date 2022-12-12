@@ -157,3 +157,6 @@ lower case, leaving the original unchanged.
 
 You can use the accompanying templates `exercise_module1.f90` and
 `exercise_program1.f90`.
+
+A solution to the exercise can be found in the [solutions](./solutions)
+directory.
