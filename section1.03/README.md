@@ -194,3 +194,6 @@ for given values of `a`, `b`, and `c`.
 See https://en.wikipedia.org/wiki/Quadratic_formula
 
 A template `exercise1.f90` provides some instructions.
+
+A solution to this exercise appears as a template for the exercise
+in [section2.03](../section2.03/exercise1.f90).

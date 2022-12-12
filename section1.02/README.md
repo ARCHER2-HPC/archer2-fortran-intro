@@ -260,6 +260,13 @@ where the `%` symbol is referred to as the component selector. The real
 and imaginary parts are also available via the `real()` and `aimag()`
 intrinsic functions, respectively.
 
+### Exercise (2 minutes)
+
+By using variables of complex type, check that you can use the
+intrinsic function `srqt()` to confirm that the square root of
+-1 is `i`. What happens if you try to try to take the squre root
+of a negative value stored as a real variable?
+
 ### Exercise (5 minutes)
 
 The accompanying template `exercise3.f90` provides instructions for an
@@ -267,9 +274,14 @@ exercise which involves the approximation to the constant pi computed
 via a Gauss-Legendre algorithm. Some
 background can be found at https://en.wikipedia.org/wiki/Pi.
 
+A solution to this problem appears as the template for the exercise in
+[section2.01](../section2.01/exercise1.f90).
+
+### Exercise (5 minutes)
+
 A second exercise in a similar vein looks at an approximation to the
 conductance of a rectangular channel subject to a constant flow.
 Instructions are in `exercise4.f90`.
 
-The results of these exercises will be used in later problems (some
-solutions will also be provided).
+A solution to this problem appears as the template for the second
+exercise in [section2.01](../section2.01/exercise2.f90).

@@ -216,3 +216,5 @@ as in the template program. Note the template program expects a module
 
 Additional exercises: repeat for integer data (to "P2" format `.pgm`)
 and floating point data (to "P3" format `.ppm`).
+
+A solution to this problem appears in [section6.03](./section6.03).
