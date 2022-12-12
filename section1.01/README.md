@@ -151,3 +151,10 @@ This course therefore prefers an all lower-case style.
 Write a program which prints out the actual values of the symbols
 `output_unit`, `error_unit`, and `input_unit`
 (all from `iso_fortran_env`) to the screen.
+
+If you haven't used the `only` clause in your `use iso_fortran_env`,
+add it now. What happens to the results if you miss out one of the
+symbols referenced from the `only` clause? This behaviour will be
+explained in the following section.
+
+A version of this program ia available as `exercise1.f90`.
