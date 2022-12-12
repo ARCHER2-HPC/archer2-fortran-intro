@@ -66,6 +66,7 @@ Each section of the course is associated with a different directory,
 each of which
 contains a number of example programs and exercise templates. Answers to
 exercises generally re-appear as templates to later exercises.
+Miscellaneous solutions also appear in the [solutions](./solutions) directory.
 
 Not all the examples compile. Some have deliberate errors which will be
 discussed as part of the course.
