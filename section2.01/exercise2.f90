@@ -19,18 +19,37 @@ program exercise2
   ! "Viscous Fluid Flow" CRC Press, Boca Raton, Florida (2000).
 
   !  Exercise
-  !  Compute the first term in the series (i.e., k = 1):
+  !  Use a loop to compute a fixed number of terms in the sum over
+  !  index k. Convergence may be rather slow (check by printing out
+  !  the current value every 20 iterations.
   !
-  !  C_1 = (4/3) b c^3 [ 1 - 6(c/b) tanh(a_k b/c) / a_k^5 ]
-  !
-  !  We will use the sample values w = 62, h = 30.
-  !
-  !  You will need the intrinsic function tanh() for hyperbolic tangent.
-  !
-  !  Your result should be in the region of 97227.88 ( the exact figure
-  !  depending on precision).
+  !  We will use the sample values w = 62, h = 30. The template below
+  !  computes only the first term k = 1.
 
-  !  Try for both real32 and real64.
-  !  Does your compiler support kind real128?
+
+  use iso_fortran_env
+  implicit none
+
+  integer, parameter :: kp = real64
+
+  real (kp), parameter :: pi = 4.0*atan(1.0)
+  real (kp), parameter :: w = 62.0
+  real (kp), parameter :: h = 30.0
+
+  real (kp) :: a, b, c
+  real (kp) :: conductance
+
+  a = 0.5*pi
+  b = 0.5*w
+  c = 0.5*h
+
+  ! First term only
+  conductance = (4.0/3.0)*b*(c**3)*(1.0 - 6.0*(c/b)*tanh(a*b/c)/a**5)
+
+  ! Some appropriate output might be ...
+  print *, "Value of w:       ", w
+  print *, "Value of h:       ", h
+  print *, "Value of pi:      ", pi
+  print *, "Approximation is: ", conductance
 
 end program exercise2

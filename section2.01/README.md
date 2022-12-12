@@ -99,10 +99,16 @@ iterations are required to converge when using kind(1.d0)? Can you
 adjust the program to halt the iteration if the approximation
 is within a given tolerance of the true answer?
 
+A simple solution to this problem is used as a template to
+the exercise in [section2.02](../section2.02/exercise1.f90).
+
+### Exercise (5 minutes)
+
 For `exercise2.f90` a similar thing is required. Use a loop to compute
 a fixed number of terms in the sum over index k (use real type `real64`
 for the sum). Here you should find convergence is much slower (you
 may need about 1000 terms); check by printing out the current value
 every so many terms (say 20).
 
-What happens if you accumulate the sum in the reverse order in this case?
+Expert question: What happens if you accumulate the sum in the reverse
+order in this case?
