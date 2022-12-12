@@ -1,4 +1,4 @@
-# Exercise
+# Exercises
 
 These exercises can, largely, be done in any order.
 
@@ -91,3 +91,8 @@ elements.
 elements to provide a check the file has been read correctly.
 
 * Try some other matrices from the Matrix Market.
+
+
+## Solutions
+
+Some solutions are available in the [soultions](./solutions) directory.
