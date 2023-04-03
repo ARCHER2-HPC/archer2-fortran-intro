@@ -1,6 +1,10 @@
+<img src="./img/archer2_logo.png"  width="355" height="100" align="left" /> <img src="./img/epcc_logo.jpg" align="right" width="133" height="100" />
 
-Introduction to Modern Fortran
-------------------------------
+<br /><br /><br /><br />
+
+# Introduction to Modern Fortran
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This course is aimed at users and developers who know how to program,
 but have little or no experience in Fortran, and those who may wish to
@@ -135,3 +139,14 @@ advertised start and finish times, and the break times.
 | 15:30 | Exercises / solutions                                   |                            |
 | 16:00 | Other things you may see; testing; resources            | [section7.01](section7.01) |
 | 16:30 | Finish                                                  |                            |
+
+---
+
+This work is licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
