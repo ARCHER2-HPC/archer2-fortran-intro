@@ -112,7 +112,7 @@ use intrinsic procedures as actual arguments.
 ## Limited polymorphism
 
 We have seen a number of intrinsic functions which take arguments of
-different types (such as `mod()`). Such a situation where the arguments
+different types, such as `mod()`. Such a situation where the arguments
 can take a different form is sometimes referred to as limited polymorphism
 (or overloading).
 
@@ -146,7 +146,7 @@ that is, at least one non-optional dummy argument must be different.
 
 ### Exercise
 
-In section4.03, we wrote a module to produce a `.pnm` image file. The
+In section 4.03, we wrote a module to produce a `.pnm` image file. The
 accompanying module `pbm_image.f90` provides two implementations
 of such a routine: one for a logical array, and another for an integer
 array.
