@@ -142,7 +142,7 @@ based on the actual argument when used with a _generic name_. This is:
 ```
 This should appear in the specification part of the relevant module.
 The two specific implementations must be distinguishable by the compiler,
-that is, at least one none-optional dummy argument must be different.
+that is, at least one non-optional dummy argument must be different.
 
 ### Exercise
 
