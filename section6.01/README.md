@@ -68,7 +68,7 @@ defined in the file `external.f90`, and an accompanying program
 
 Compile the two files, e.g.:
 ```
-$ ftn external.f90 program.f90
+$ ftn external.f90 example1.f90
 ```
 (note that there are no modules involved, and no `.mod` files will appear).
 What is the result when you try to run the program?
