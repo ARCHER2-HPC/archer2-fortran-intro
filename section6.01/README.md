@@ -13,7 +13,7 @@ information about the interface.
 
 Consider a program unit (which may or may not be a separate file) which
 contains a function declaration outside a module scope. E.g.,
-```
+```fortran
   function my_mapping(i) result(imap)
     integer, intent(in) :: i
     integer             :: imap
@@ -27,7 +27,7 @@ about the function.
 It is possible to provide the compiler with some limited information
 about the return value of the function with the `external` attribute
 (also available as a statement). E.g.,
-```
+```fortran
   program example
 
     implicit none
@@ -38,7 +38,7 @@ about the return value of the function with the `external` attribute
 However, we have still not given the compiler full information about
 the interface. The interface is said to remain _implicit_. To make
 it explicit, the `interface` construct is available:
-```
+```fortran
   program example
 
     implicit none
@@ -67,14 +67,14 @@ defined in the file `external.f90`, and an accompanying program
 `example1.f90` calls the function therein.
 
 Compile the two files, e.g.:
-```
+```bash
 $ ftn external.f90 program.f90
 ```
 (note that there are no modules involved, and no `.mod` files will appear).
 What is the result when you try to run the program?
 
 Try adding the appropriate `external` declaration
-```
+```fortran
   integer, external :: array_size
 ```
 What happens if you try to run the program now?
@@ -93,7 +93,7 @@ different arguments which cannot be prescribed in advance.
 
 This can be done if an interface block is provided which describes
 the function that is the dummy argument. E.g.,
-```
+```fortran
   subroutine my_integral(a, b, afunc, result)
     real, intent(in) :: a
     real, intent(in) :: b
@@ -120,7 +120,7 @@ However, it is not possible in Fortran to define two procedures of the same
 name, but different arguments (at least in the same scope). We need different
 names; suppose we have two module sub-programs, schematically:
 
-```
+```fortran
    subroutine my_specific_int(ia)
      integer, intent(inout) :: ia
      ... integer implementation ...
@@ -133,7 +133,7 @@ names; suppose we have two module sub-programs, schematically:
 ```
 A mechanism exists to allow the compiler to identify the correct routine
 based on the actual argument when used with a _generic name_. This is:
-```
+```fortran
   interface my_generic_name
     module procedure my_specific_int
     module procedure my_specific_real
@@ -160,7 +160,7 @@ correctly.
 
 For simple derived types it may be meaningful to define relational
 and arithmetic operators. For example, if we had a date type such as
-```
+```fortran
   type :: my_date
     integer :: day
     integer :: month
@@ -171,7 +171,7 @@ it may be meaningful to ask whether two dates are equal and so on (it would
 not really be meaningful to add one date to another).
 
 One can write a function to do this:
-```
+```fortran
   function my_dates_equal(date1, date2) result(equal)
     type (my_date), intent(in) :: date1
     type (my_date), intent(in) :: date2
@@ -181,9 +181,9 @@ One can write a function to do this:
 ```
 As a syntactic convenience, it might be useful to use `==` in a logical
 expression using dates. This can be arranged via
-```
+```fortran
   interface operator(==)
-    module proceduce my_dates_equal
+    module procedure my_dates_equal
   end interface
 ```
 Again this should appear in the relevant specification part of the
@@ -203,7 +203,7 @@ is declared in terms of a scalar dummy argument, but then may be
 applied to an array actual argument element by element.
 
 Such a procedure should be declared:
-```
+```fortran
   elemental function my_function(a) result(b)
     integer, intent(in) :: a
     integer             :: b
@@ -211,7 +211,7 @@ Such a procedure should be declared:
   end function my_function
 ```
 An invocation should be, e.g.:
-```
+```fortran
    iresult(1:4) = my_function(ival(1:4))
 ```
 
@@ -232,16 +232,16 @@ Write a module/program to perform a very simple numerical integration
 of a simple one-dimensional function _f(x)_. We can use a
 trapezoidal rule: for lower and upper limits _a_ and _b_, the
 integral can be approximated by
-```
+```fortran
   (b - a)*(f(a) + f(b))/2.0
 ```
 If we introduce a small interval `h = (b - a)/n` then the same
 expression is
-```
+```fortran
   h*(f(a) + sum + f(b))/2.0
 ```
 with the sum
-```
+```fortran
   sum = 0.0
   do k = 1, n-1
     sum = sum + 2.0*f(a+k*h)

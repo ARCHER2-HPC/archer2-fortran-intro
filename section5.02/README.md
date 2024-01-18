@@ -9,7 +9,7 @@ data structures.
 
 A pointer may be declared by adding the `pointer` attribute to
 the relevant data type, e.g.,
-```
+```fortran
 integer, pointer :: p => null()
 ```
 In this case we declare a pointer to integer `p`, which is initialised to
@@ -21,7 +21,7 @@ errors is to forget the `>` if pointer assignment is wanted.
 
 It is important to be able to check that a given pointer is not `null()`.
 This is done with the `associated()` intrinsic; schematically,
-```
+```fortran
    integer, pointer :: p => null()
    ...
    if (associated(p)) ... do something
@@ -31,7 +31,7 @@ way.
 
 If one wishes to have a pointer to an array, the rank of the pointer
 should be the same as the target:
-```
+```fortran
   real, dimension(:),   pointer :: p1
   real, dimension(:,:), pointer :: p2
 ```
@@ -42,7 +42,7 @@ and so on.
 
 A pointer may be associated with another variable of the appropriate
 type (which is not itself a pointer) by using the target attribute:
-```
+```fortran
   integer, target  :: datum
   integer, pointer :: p
 
@@ -51,7 +51,7 @@ type (which is not itself a pointer) by using the target attribute:
 The pointer is now said to be associated with the target. We can now
 perform operations on `datum` vicariously through `p`. E.g., a
 standard assignment would be
-```
+```fortran
   integer, target  :: datum = 1
   integer, pointer :: p
 
@@ -69,7 +69,7 @@ C `restrict` qualifier.
 Note that there is an optional _target_ argument to the `associated()`
 intrinsic, which allows the programmer to inquire whether a pointer
 is associated with a specific target, e.g.,
-```
+```fortran
    associated(p, target = datum)   ! .true. if p => datum
 ```
 
@@ -88,7 +88,7 @@ of `p` before and after the pointer assignment.
 One common use of pointers is to provide a temporary alias to another
 variable (where no copying takes place). As a convenience, one can
 use the `associate` construct, e.g.:
-```
+```fortran
   real :: improbably_or_tediously_long_variable_name
   ...
   associate(p => improbably_or_tediously_long_variable_name)
@@ -109,7 +109,7 @@ Compile, and check the output of the accompanying `example2.f90`.
 
 One common use of pointers is for linked data structures. For example,
 an entry in a linked list might be represented by the type
-```
+```fortran
   type :: my_node
     integer                 :: datum
     type (my_node), pointer :: next
@@ -119,7 +119,7 @@ This sort of dynamic data structure requires that we establish or
 destroy storage as entries are added to the list, or removed from
 the list.
 
-```
+```fortran
   subroutine my_list_add_node(head, datum)
 
     ! Insert new datum at head of list
@@ -156,12 +156,12 @@ recommended.
 If one needs to increase (or decrease) the size of an existing
 allocatable array, the `move_alloc()` intrinsic is useful. E.g.,
 if we have an integer rank one array
-```
+```fortran
   integer, dimension(:), allocatable :: iorig
 ```
 and establish storage of a given size, and some relevant initialisations,
 we may then wish to increase the size of it.
-```
+```fortran
   integer :: nold
   integer, dimension(:), allocatable :: itmp
 
@@ -178,12 +178,12 @@ original storage.
 ### Arrays of pointers
 
 A small trick is required to arrange an array of pointers. Recall that
-```
+```fortran
   real, dimension(:), pointer :: a
 ```
 is a pointer to a rank one array. If one wanted an array of such
 objects, it can be achieved by wrapping it in a type:
-```
+```fortran
   type :: pointer_rr1
     real, dimension(:), pointer :: p => null()
   end type pointer_rr1

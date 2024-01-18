@@ -7,7 +7,7 @@ definitions and operations, and make them available elsewhere.
 
 We have already used one _intrinsic module_ (`iso_fortran_env`); we
 can also write our own, e.g.,
-```
+```fortran
 module module1
 
   implicit none
@@ -26,7 +26,7 @@ end module module1
 ```
 We may now `use` the new module in other _program units_ (main program or
 other modules). For example:
-```
+```fortran
 program example1
 
   use module1
@@ -58,7 +58,7 @@ of which more later.
 
 One would typically expect modules and a main program to be in
 separate files, e.g.,:
-```
+```bash
 $ ls
 module1.f90     program1.f90
 ```
@@ -67,12 +67,12 @@ the corresponding file (with extension `.f90`). You can do
 differently, but it can become confusing. Likewise for the main program.
 
 We can compile the module, e.g.,
-```
+```bash
 $ ftn -c module1.f90
 ```
 where the `-c` option to the Fortran compiler `ftn` requests compilation
 only (no link). This should give us two new files:
-```
+```bash
 $ ls
 module1.f90     module1.mod     module1.o       program1.f90
 ```
@@ -85,7 +85,7 @@ executable.
 
 We can now compile both the main program and the module to give an
 executable.
-```
+```bash
 $ ftn module1.o program1.f90
 ```
 Again, by analogy with C header files, we do not include the `.mod`
@@ -98,11 +98,11 @@ working directory).
 If you haven't already done so, compile the accompanying `module1.f90`
 and `program1.f90`. Check the errors which occur if you: (1) try to
 compile the program without the module file via, e.g.,
-```
+```bash
 $ ftn program1.f90
-````
-and (2), if you try to compile and link the module file alone:
 ```
+and (2), if you try to compile and link the module file alone:
+```bash
 $ ftn module1.f90
 ```
 
@@ -112,10 +112,10 @@ $ ftn module1.f90
 Entities declared in a module are, by default, available by use association,
 that is, they are visible in program units which `use` the module. One can
 make this scope explicit via the `public` and `private` statements.
-```
+```fortran
 module module1
 
-  implciit none
+  implcit none
   public
 
   integer, parameter :: mykind = kind(1.d0)
@@ -135,7 +135,7 @@ _host association_ (always).
 
 An alternative would be to switch the default to `private`, and explicitly
 add `public` attributes:
-```
+```fortran
 module module1
 
   implicit none
@@ -170,7 +170,7 @@ check the error if you try to compile `program1.f90`.
 
 It is possible to establish non-parameter data in the specification
 section of a module. E.g.,
-```
+```fortran
 module module2
 
   implicit none
@@ -187,7 +187,7 @@ neither thread safe nor re-entrant.
 
 Even worse, variables declared with an initialisation in a module
 sub-program, e.g.,
-```
+```fortran
   integer :: i = 1
 ```
 implicitly take on the Fortran `save` attribute. This means the
@@ -212,7 +212,7 @@ of large routines.
 
 It is possible to introduce a local scope which follows executable
 statements using the `block` construct. Schematically:
-```
+```fortran
    ... some computation ...
    block
      integer :: itmp                  ! in scope within the block only
@@ -237,7 +237,7 @@ Check you can use the new function from a main program.
 What really needs to be publicly available from the module in this case?
 
 Additional exercise: Can we have the following situation:
-```
+```fortran
 module a
 
   use b
@@ -246,7 +246,7 @@ module a
 end module a
 ```
 and
-```
+```fortran
 module b
 
   use a

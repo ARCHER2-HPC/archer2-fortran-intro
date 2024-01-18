@@ -7,7 +7,7 @@ Fortran provides the following intrinsic data types: numeric types `integer`,
 
 The following program declares a variable with each of the three intrinsic
 numeric types, and provides an initial value in each case.
-```
+```fortran
 program example1
 
    implicit none
@@ -36,7 +36,7 @@ Other special characters recognised by Fortran are given in
 
 The `implicit` statement defines a type for variable names not explicitly
 declared.  So, the default situation can be represented by
-```
+```fortran
   implicit integer (i-n), real (a-h, o-z)
 ```
 that is, variables with names beginning with letters `i-n` are implicitly
@@ -66,7 +66,7 @@ The declarations above give us variables of some (implementation-defined)
 default type (typically 4-byte integers, 4-byte reals). A mechanism to
 control the exact kind, or representation,  is provided. For example
 (see `example2.f90`),
-```
+```fortran
   use iso_fortran_env, only : int64, real64
   implicit none
 
@@ -99,7 +99,7 @@ The optional _kind selector_ is
 The upshot of this is that the syntax of declarations is quite elastic,
 and you may see a number of different styles. A reasonable form of
 concise declaration with an explicit kind type parameter is:
-```
+```fortran
   integer (int32)  :: i
   real    (real32) :: a
   complex (real32) :: z
@@ -115,14 +115,14 @@ print out their values to the screen.
 
 One may (optionally) specify the kind of an integer literal by appending the
 kind type parameter with an underscore `_`, e.g.:
-```
+```fortran
 123
 +123
 -123
 12345678910_int64
 ```
 Floating point literal constants can take a number of forms. Examples are:
-```
+```fortran
 -3.14
 .314
 1.0e0             ! default precision
@@ -134,7 +134,7 @@ Floating point literal constants can take a number of forms. Examples are:
 
 Complex literals are constructed with real and imaginary parts, with each
 part real.
-```
+```fortran
 (0.0, 1.0)        ! square root of -1
 ```
 
@@ -142,7 +142,7 @@ part real.
 
 Suppose we did not want to hardwire our kind type parameters throughout
 the code. Consider:
-```
+```fortran
 program example3
 
   implicit none
@@ -174,7 +174,7 @@ It is an intrinsic function and part of the language itself.
 
 Using a parameter provides a degree of abstraction for the real data type.
 Other examples might include:
-```
+```fortran
   integer, parameter :: nmax = 32              ! A constant
   real,    parameter :: pi = 4.0*atan(1.e0)    ! A well-known constant
   complex, parameter :: zi = (0.0, 1.0)        ! square root of -1
@@ -190,7 +190,7 @@ another intrinsic function `storage_size()` (roughly equiavalent to C
 Run the program and check the actual values of the kind type parameters
 and associated storage sizes. Speculate on the portability of a program
 declaring, e.g.,:
-```
+```fortran
   integer (4) :: i32
   integer (8) :: i64
 ```
@@ -210,7 +210,7 @@ negation (`-`).
 
 In order of increasing precedence these are `-`, `+`, `/`, `*`,
 and `**` (otherwise left-to-right). In particular
-```
+```fortran
    a = b*c**2    ! is evaluated as b*(c**2)
    a = b*c*d     ! evaluated left-to-right (b*c)*d
 ```
@@ -225,7 +225,7 @@ Broadly, assignments featuring different data types will cause
 promotion to a "wider" type or cause truncation to a "narrower" type.
 If one wants to be explicit, the equivalent of the cast mechanism in C
 is via intrisic functions, e.g.,
-```
+```fortran
    integer          :: i = 1
    complex (real64) :: z = (1.0, 1.0)
    real    (real64) :: a, b
@@ -250,7 +250,7 @@ context.
 ### Complex real and imaginary parts
 
 The real and imaginary parts of a complex variable may be accessed
-```
+```fortran
   complex :: z
 
   z%re = 0.0     ! real part

@@ -9,7 +9,7 @@ tabulation of output for human readers.
 
 So far we have seen only output (via either `print` or `write`). Input
 is via the `read` statement.
-```
+```fortran
   use :: iso_fortran_env
   ...
   read (unit = input_unit, fmt = *) var-io-list
@@ -27,7 +27,7 @@ is typically the keyboard (or "screen") for interactive use.
 In addition to the _list-directed_ or free-format `*` specifier, a
 format may be a string literal, a fixed character parameter, or a
 string constructed at run time. Some examples are:
-```
+```fortran
    read (*, *) var             ! read using list-directed, or free format
    print '(a)', "A string"     ! character literal '(a)'
    write (*, myformat) var     ! character variable (or parameter)
@@ -60,7 +60,7 @@ some common examples of the three different types of descriptor.
 Data edit descriptors feature a single character describing the type
 data format wanted, and a literal integer part indicating the total
 field width, and number of decimals. These include
-```
+```fortran
   iw        ! integer width w characters
   fw.d      ! floating point number total width w and d decimal characters
   ew.d      ! scientific notation with total width w and d decimal characters
@@ -73,7 +73,7 @@ decimal point.
 
 Data edit descriptors should correspond to the relevant item in the _io-list_,
 based on position. Some simple examples are:
-```
+```fortran
   integer :: ivar = 40
   real    :: avar = 40.0
   print "(  i10)", ivar           ! produces "40" with 8 leading spaces
@@ -95,7 +95,7 @@ There will be an appropriate movement in the decimal point.
 
 If an exponent greater than 999 is required, an optional `e` descriptor for
 the exponent itself is available:
-```
+```fortran
   print "(e14.3e4)", avar         ! Use at least 4 digits in exponent
 ```
 
@@ -106,7 +106,7 @@ required.
 ### Character string edit descriptors
 
 One can use a string literal as part of the edit descriptor itself, e.g.,
-```
+```fortran
   real :: avar = 4.0
   print "('This is the result: ', e14.7)", avar
 ```
@@ -116,13 +116,13 @@ One can use a string literal as part of the edit descriptor itself, e.g.,
 There are a number of these. They do not correspond to an item in the
 _io-list_, but alter the appearance of the output. The most common is
 `x` which introduces a space (or blank). E.g.,
-```
+```fortran
    print "(i12,x,e12.6)", ivar, avar
 ```
 This will ensure at least on space between the two items in the list.
 
 If a leading plus sign is wanted, use the `sp` control, e.g.:
-```
+```fortran
   print "(sp,e12.6)", abs(avar)
 ```
 
@@ -137,7 +137,7 @@ width. What's the result? What's the solution?
 
 For a larger number of items of the same type, it can be useful to specify
 a _repeat count_. Simply prefix a literal integer count to the format, e.g.:
-```
+```fortran
    real, dimension(4) :: a = [ 1.0, 2.0, 3.0, 4.0]
 
    print "(4(2x,e14.7))", a(1:4)
@@ -160,7 +160,7 @@ may only produce an `F`.
 
 If no new line at all is wanted, one can use the `advance = no` argument
 to `write()`, e.g.:
-```
+```fortran
   write (*, "('Input an integer: ')", advance = 'no')
   read (*, *) ivar
 ```
@@ -169,7 +169,7 @@ Non-advancing output must not use list-directed I/O.
 ## Statement labels
 
 Formally, a format specifier may also be a _statement label_. For example,
-```
+```fortran
    write (unit = myunit, fmt = 100) ia, ib, c
 
 100 format(i3, i3, f14.7)

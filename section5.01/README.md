@@ -12,7 +12,7 @@ this introductory course will only touch on this feature.
 ## Type definitions
 
 A derived type with two _components_ would be declared, e.g.,
-```
+```fortran
   type :: my_type
     integer                         :: nmax
     real, dimension(:), allocatable :: data
@@ -22,11 +22,11 @@ Components may be intrinsic data types (all declared in the usual way),
 or derived types.
 
 A variable of this type is declared
-```
+```fortran
   type (my_type) :: var
 ```
 and individual components are referenced with the component selector `%`, e.g.,
-```
+```fortran
   var%nmax = 10
   ...
   print *, "Values are ", var%data(1:3)
@@ -36,7 +36,7 @@ intrinsic type.
 
 An array of types is defined in the usual way, and the component
 selector is applied to individual elements, e.g.,
-```
+```fortran
   type (my_type), dimension(10) :: var
   ...
   var(1)%nmax = 100
@@ -65,13 +65,13 @@ Formally, we have
 ```
 The default situation is for both the type and its components to
 be public. This may be made explicit by
-```
+```fortran
   type, public :: my_type
     ...
   end type my_type
 ```
 If one wants a public type with private components (an opaque type), use
-```
+```fortran
   type, public :: my_opaque_type
     private
     ...
@@ -88,7 +88,7 @@ then it can be declared `private` in the attribute list.
 
 For types with public components, it is possible to use a structure
 constructor to provide initialisation, e.g.,:
-```
+```fortran
   type, public :: my_type
      integer :: ia
      real    :: b
@@ -108,7 +108,7 @@ must appear as `null()` in a constructor expression list.
 
 A type may be defined with default initial values. One noatable exception
 is that allocatable components do not have an initialisation. E.g.:
-```
+```fortran
   type :: my_type
     integer                            :: nmax = 10
     real                               :: a0 = 1.0
@@ -116,7 +116,7 @@ is that allocatable components do not have an initialisation. E.g.:
   end type
 ```
 A default initialisation can be applied by using an empty constructor::
-```
+```fortran
   type (my_type) :: a
 
   a = my_type()
@@ -157,7 +157,7 @@ What would you then have to provide to allow initialisation?
 
 List-directed output for derived types can be used to provide a
 default output in which each component appears in order, schematically:
-```
+```fortran
   type (my_type) :: a
   ...
   write (*, fmt = *) a
@@ -175,14 +175,14 @@ A special `dt` editor descriptor exists, of the form:
   dt[iodesc-string][(v-list)]
 ```
 For example we may have
-```
+```fortran
   dt" my-type: "(2,14)
 ```
 The _iodesc-string_ and _v-list_ will re-appear as arguments to
 a special function which must be provided by the programmer.
 Information on this function is provided as part of the _procedure-part_
 of the type definition:
-```
+```fortran
 type, public :: my_type
   integer :: n
   complex :: z
@@ -192,7 +192,7 @@ contains
 end type my_type
 ```
 The following module subroutine should then be provided:
-```
+```fortran
   subroutine my_type_write_formatted(self, unit, iotype, vlist, iostat, iomsg)
 
     class (my_type),     intent(in)    :: self
@@ -239,7 +239,7 @@ can use your own version.
 
 Try implementing the generic `write(formatted)` function for the following
 type:
-```
+```fortran
   type, public :: my_date
     integer :: day = 1        ! day 1-31
     integer :: month = 1      ! month 1-12

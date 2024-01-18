@@ -11,14 +11,14 @@ track of the length of the string.
 The meaning of relational operators `==` and so on in the context of
 characters is largely what one would expect from the standard ASCII
 sequence. E.g.,
-```
+```fortran
    "A" <  "b"      ! true
    "A" == "a"      ! false
    "A" /= "]"      ! true
 ```
 Note the ordinal position of a single character in the ASCII sequence
 can be found via an intrinsic function, e.g.:
-```
+```fortran
    integer             :: i
    character (len = 1) :: c
    i = iachar("A")           ! i = 65
@@ -38,20 +38,20 @@ function.
 The length with trailing blanks removed is `len_trim()`. To actually
 remove the trailing blanks, use `trim()`. This is often seen when
 concatenating fixed-length character strings:
-```
+```fortran
   print *, "File name: ", trim(file_stub)//"."//trim(extension)
 ```
 
 It's also useful if you want to perform an operation on each individual
 character, e.g.,
-```
+```fortran
   do n = 1, len_trim(string)
     if (string(n:n) == 'a') counta = counta + 1
   end do
 ```
 Note that the colon is mandatory in a sub-string reference, so a
 single character must be referenced, e.g.,
-```
+```fortran
    print *, "Character at position i: ", string(i:i)
 ```
 
@@ -62,7 +62,7 @@ justification, sub-string searches, and so on.
 
 The easiest way to provide a string which can be manipulated on a
 flexible basis is the deferred length character:
-```
+```fortran
   character (len = :), allocatable :: string
 
   string = "ABCD"         ! Allocate and assign string
@@ -77,7 +77,7 @@ trailing blanks.
 If an allocation is required for which only the length is known (e.g.,
 there is no literal string involved), the following form of allocation
 is required:
-```
+```fortran
   integer :: mylen
   character (len = :), allocatable :: string
 
@@ -88,7 +88,7 @@ is required:
 
 Allocatable strings will automatically be deallocated when they go out
 of scope and are no longer required. One can also be explicit:
-```
+```fortran
   deallocate(string)
 ```
 if wanted.
@@ -96,12 +96,12 @@ if wanted.
 ## Arrays of strings
 
 We have seen that we can define a fixed length parameter, e.g.,:
-```
+```fortran
   character (len = *), parameter :: day = "Sunday"
 ```
 Suppose we wanted an array of strings for "Sunday", "Monday", "Tuesday",
 and so on. One might be tempted to try something of the form:
-```
+```fortran
   character (len = *), dimension(7), parameter :: days = [ ... ]
 ```
 
@@ -112,7 +112,7 @@ Check the result of the compilation of `example3.f90`.
 The are a number of solutions to this issue. One could try to pad the
 lengths of each array element to be the same length. A better way is
 to use a constructor with a type specification:
-```
+```fortran
 [character (len = 9) :: "Sunday", "Monday", "Tuesday", "Wednesday", ...]
 ```
 Here the type specification is used to avoid ambiguity in how the
@@ -125,7 +125,7 @@ Check you can make this adjustment to `example3.f90`.
 
 If a character variable has intent `in` in the context of a procedure,
 it typically may be declared:
-```
+```fortran
   subroutine some_character_operation(carg1, ...)
 
      character (len = *), intent(in) :: arg1
@@ -136,12 +136,12 @@ where the length does not change.
 
 For all other cases, use of deferred length allocable characters is
 recommended. E.g.,
-```
+```fortran
   function build_filename(stub, extension) result(filename)
 
     character (len = *), intent(in)  :: stub
     character (len = *), intent(in)  :: extension
-    character (len = :), allocatable :: filenane
+    character (len = :), allocatable :: filename
     ...
 ```
 A matching declaration in the caller is required.

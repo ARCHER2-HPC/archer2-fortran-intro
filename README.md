@@ -54,13 +54,13 @@ support IDEs).
 For details of how to log into an ARCHER2 account, see https://docs.archer2.ac.uk/quick-start/quickstart-users/
 
 Check out the git repository to your laptop or ARCHER2 account.
-```
+```bash
 $ git clone https://github.com/ARCHER2-HPC/archer2-fortran-intro.git
 $ cd archer2-fortran-intro
 ```
 The default Fortran compiler on ARCHER2 is the Cray Fortran compiler
 invoked using `ftn`. For example,
-```
+```bash
 $ cd section1.01
 $ ftn example1.f90
 ```

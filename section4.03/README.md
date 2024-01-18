@@ -8,7 +8,7 @@ part of a useful application.
 
 File handles, or _unit numbers_ are obtained using `open()`, and are
 used to direct the output of `write()` to the relevant file.
-```
+```fortran
   integer :: myunit
 
   open(newunit = myunit, file = 'filename.dat', form = 'formatted', &
@@ -20,7 +20,7 @@ used to direct the output of `write()` to the relevant file.
   close(unit = myunit, status = 'keep')
 ```
 To read back the same data, we might use:
-```
+```fortran
    open(newunit = myunit, file = 'filename.dat', form = 'formatted', &
         action = "read", status = "old")
 
@@ -71,7 +71,7 @@ The `inquire` statement offers a way to obtain information on the
 current state of either unit numbers or files. There are a large
 number of optional arguments. One common usage is to check whether
 a file exists:
-```
+```fortran
   logical :: exists
   inquire( file = 'filename.dat', exist = exists)
 ```
@@ -82,7 +82,7 @@ In some situations, it may be convient to use a formatted read to
 generate a new string in memory (in the same way as `sprintf` in C).
 Fortran uses a so-called _internal file_, which is usually a
 character string. E.g.,
-```
+```fortran
    character (len = 10) :: buffer
    integer              :: ival
    ...
@@ -98,7 +98,7 @@ formal exception mechanism in Fortran, some ability to recover is
 available.
 
 Consider the following schematic example:
-```
+```fortran
 subroutine read_my_file_format(myunit, ..., ierr)
 
   integer, intent(in)   :: myunit
@@ -133,7 +133,7 @@ statement with intent out `ierr = 0`.
 
 Both `open` and `close` statements provide optional arguments for
 error handling, illustrated schematically here with `open()`:
-```
+```fortran
   integer :: ierr
   character (len = 128) :: msg
 
@@ -153,7 +153,7 @@ truncated or padded appropriately.
 
 Error handling facilities for `read()` and `write()` are similar, and
 are illustrated here:
-```
+```fortran
   write (myunit, myformat, end = 999, err = 998, iostat = ierr, iomsg = msg) ..
 ```
 * `end`: label in same scope to which control is transferred on end-of-file;
@@ -163,7 +163,7 @@ are illustrated here:
 
 The two negative `iostat` cases can be distinguished via calls to
 the intrinsic functions
-```
+```fortran
   is_iostat_end(ierr)
   is_iostat_eor(ierr)
 ```
@@ -172,7 +172,7 @@ the intrinsic functions
 
 If one really can't continue, then execution can be terminated immediately
 via the `stop` statement. This has an optional message string argument.
-```
+```fortran
   stop "Cannot continue"
 ```
 In general one should try to recover by returning control to the caller,

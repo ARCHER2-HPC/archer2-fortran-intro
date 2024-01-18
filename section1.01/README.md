@@ -3,7 +3,7 @@
 ## First example
 
 A very simple program might be:
-```
+```fortran
 program example1
 
   ! An example program prints "Hello World" to the screen
@@ -51,7 +51,7 @@ We will return to the `contains` statement in the context of modules.
 ## `print` statement
 
 In general
-```
+```fortran
   print format [ , output-item-list ]
 ```
 where the `format` is a format specifier (discussed later) and the
@@ -65,7 +65,7 @@ is allowed to apply a default format for a given type of item.
 ## Alternative
 
 Consider the following program (available as `example3.f90`):
-```
+```fortran
 program example3
 
   use iso_fortran_env, only : output_unit
@@ -114,7 +114,7 @@ where the `io-unit` is a valid integer unit number, and the `format`
 is a format-specifier (as for `print`).
 
 Examples are
-```
+```fortran
   write (unit = output_unit, fmt = *)
   write (output_unit, *)
   write (*, *)
@@ -132,7 +132,7 @@ detail in the context of i/o to external files.
 Modern Fortran is not case sensitive. Older versions required capitals,
 a style which has persisted to the present day in some places. So you
 may see things such as
-```
+```fortran
 PROGRAM example1
 
   PRINT *, "Hello World"

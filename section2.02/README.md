@@ -6,7 +6,7 @@ which are an intrinsic feature of the language.
 ## A one-dimensional array
 
 Arrays may be declared with addition of the `dimension` attribute, e.g.,
-```
+```fortran
 program example1
 
   implicit none
@@ -20,7 +20,7 @@ The default _lower bound_ is 1 and the _upper bound_ is 3.
 
 
 ### Lower and upper bounds
-```
+```fortran
   real, dimension(-2:1) :: b ! elements b(-2), b(1), b(0), b(1)
 ```
 Here we specify, explicitly, the lower and upper bounds. The
@@ -30,13 +30,13 @@ _size_ of this array is 4.
 ### Array constructor
 
 One may specify array values as a constructor
-```
+```fortran
   integer, dimension(3), parameter :: s = (/ -1, 0, +1 /)   ! F2003 or
   integer, dimension(3), parameter :: t = [  -1, 0, +1 ]    ! F2008
 ```
 
 ## A two-dimensional array
-```
+```fortran
   real, dimension(2,3) :: a   ! elements a(1,1), a(1,2), a(1,3)
                               !          a(2,1), a(2,2), a(2,3)
 ```
@@ -49,7 +49,7 @@ There is an array element order which in which we expect the implementation
 to store contiguously in memory. In Fortran this has be left-most
 dimension counting fastest. For array `a` we expect the order in
 memory to be
-```
+```fortran
 a(1,1), a(2,1), a(1,2), a(2,2), a(1,3), a(2,3)
 ```
 that is, the opposite the the convention in C.
@@ -57,7 +57,7 @@ that is, the opposite the the convention in C.
 ### `reshape`
 
 A constructor for an array of rank 2 or above might be used, e.g.,
-```
+```fortran
   integer, dimension(2,3) :: m = reshape([1,2,3,4,5,6], shape = [2,3])
 ```
 where we have used the intrinsic function `reshape()`.
@@ -72,7 +72,7 @@ available to interrogate array size and shape at run time.
 
 If we wish to establish storage with shape determined at run time,
 the _allocatable_ attribute can be used. The rank must be specified:
-```
+```fortran
   real, dimension(:, :), allocatable :: a
 
   ! ... establish shape required, say (imax, jmax) ...
@@ -102,7 +102,7 @@ value of zero to the argument.
 An array declared with the _allocatable_ attribute is initially in
 an unallocated state. When allocated, this status will change; this
 status can be interrogated via the intrinsic function `allocated()`.
-```
+```fortran
   integer, dimension(:), allocatable :: m
   ...
   if (allocated(m)) then

@@ -9,7 +9,7 @@ are arrays.
 
 One is entitled to make explicit the shape of an array in a procedure
 definition, e.g.,
-```
+```fortran
   subroutine array_action1(nmax, a)
     integer, intent(in)                    :: nmax
     real, dimension(1:nmax), intent(inout) :: a
@@ -23,7 +23,7 @@ of the array is unspecified, it takes on the default value of `1`.
 ### Assumed shape
 However, it may be more desirable to leave the exact shape
 implicit in the array itself, e.g.,
-```
+```fortran
   subroutine array_action2(a, b)
     real, dimension(:,:), intent(in   ) :: a
     real, dimension(:,:), intent(inout) :: b
@@ -44,7 +44,7 @@ The `lbound()` and `ubound()` functions return a rank one array which
 is the  relevant bound in each dimension. The optional argument `dim`
 can be used to obtain the bound in the corresponding rank or dimension
 e.g.,
-```
+```fortran
   real, dimension(:,:), intent(in) :: a
   integer :: lb1, lb2
 
@@ -66,7 +66,7 @@ are available?
 
 One is allowed to bring into existence `automatic' arrays on the stack.
 These are usually related to temporary workspace, e.g.,
-```
+```fortran
 subroutine array_swap1(a, b)
   integer, dimension(:), intent(inout) :: a, b
   integer, dimension(size(a))          :: tmp
@@ -84,7 +84,7 @@ loop and a temporary scalar.
 
 It may occasionally be appropriate to have a dummy
 argument with both an intent and `allocatable` attribute.
-```
+```fortran
   subroutine my_storage(lb, ub, a)
 
     integer, intent(in) :: lb, ub
@@ -112,7 +112,7 @@ deallocated when the relevant expression has been evaluated.
 We have encountered a number of intrinsic procedures with optional dummy
 arguments. Such procedures may be constructed with the `optional`
 attribute for a dummy argument, e.g.:
-```
+```fortran
   subroutine do_something(a, flag, ierr)
     integer, intent(in)            :: a
     logical, intent(in),  optional :: flag
@@ -123,7 +123,7 @@ attribute for a dummy argument, e.g.:
 Any operations on such optional arguments should guard against the
 possibility that the corresponding actual argument was not present
 using the intrinsic function `present()`. E.g.,
-```
+```fortran
   local_flag = some_default_value
   if (present(flag)) local_flag = flag
 ```
@@ -139,7 +139,7 @@ Procedures will often have a combination of a number of mandatory
 (non-optional) dummy arguments, and optional arguments. These may be
 mixed via the use of keywords, which are the dummy argument name. E.g.,
 using the subroutine defined above:,
-```
+```fortran
   call do_something(a, ierr = my_error_var)
 ```
 Here, `a` is appearing as a conventional positional argument, while
@@ -156,7 +156,7 @@ Consider again the problem of the tri-diagonal matrix.
 
 Refactor your existing stand-alone program (or use the template
 `exercise.f90`) to provide a module subroutine such as
-```
+```fortran
   subroutine tridiagonal_solve(b, a, c, rhs, x)
 ```
 where `b`, `a`, and `c` are arrays of the relevant

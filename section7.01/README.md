@@ -33,7 +33,7 @@ C-preprocessor is part of the C standard.
 
 However, it is very common to see preprocessor directives for
 conditional compilation, and other preprocessor features. E.g.,
-```
+```c
 #ifdef HAVE_SOME_FEATURE
   ...
 #endif
@@ -70,19 +70,19 @@ distributed memory computing.
 MPI makes use of a number of data types, macro definitions, and
 library subroutines. A modern program might introduce the information
 required via
-```
+```fortran
   use mpi_f08
 ```
 which uses derived types for data types (which are often opaque).
 
 Earlier versions might use
-```
+```fortran
   use mpi
 ```
 where the opaque types are integer handles.
 
 Older codes may even use
-```
+```fortran
 #include 'mpif.h'
 ```
 to make the necessary handles and macros available.
@@ -92,7 +92,7 @@ to make the necessary handles and macros available.
 
 MPI is at base a C interface which accommodates Fortran. The C routines
 often have prototypes of the form:
-```
+```c
   int MPI_Send(const void * buf, int ount, MPI_Datatype dt, int dest, int tag,
                MPI_Comm comm);
 ```
@@ -116,7 +116,7 @@ arguments.
 
 OpenMP is a standard way to introduce thread-level parallelism
 (typically at the level of loops). A program should
-```
+```fortran
   use omp_lib
 ```
 to provide OpenMP functions and kind type parameters.
@@ -125,7 +125,7 @@ OpenMP is largely based around compiler directives, which are switched on
 via a compiler option, usually `-fopenmp`.
 
 In Fortran, the directives are introduced by the _sentinels_:
-```
+```fortran
   !$omp ...
   ...
   !$omp end ...

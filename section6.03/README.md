@@ -21,7 +21,7 @@ implementing your own version - it's not too difficult.)
 The second step is to compute a scalar residual from a vector
 residual. If we have an array (vector) `r(1:n)` this can be
 done with:
-```
+```fortran
   residual = sum(r(:)*r(:))
 ```
 

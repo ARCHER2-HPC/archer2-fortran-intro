@@ -6,13 +6,13 @@ C `for` construct). There is no equivalent of the C++ iterator class.
 ## Uncontroled `do` construct
 
 A simple iteration is provided by the `do` statement. For example, ...
-```
+```fortran
   do
     ! ... go around for ever ...
   end do
 ```
 A slightly more useful version requires some control (see `example1.f90`):
-```
+```fortran
    integer :: i = 0
    do
      i = i + 1
@@ -24,7 +24,7 @@ A slightly more useful version requires some control (see `example1.f90`):
    ! ... control continues here after exit ...
 ```
 Loop constructs may be nested, and may also be named (see `example2.f90`):
-```
+```fortran
   some_outer_loop: &
   do
     some_inner_loop: &
@@ -42,7 +42,7 @@ they belong to the innermost construct in which they appear.
 
 More typically, one encounters controlled iterations with an `integer`
 loop control variable. E.g.,
-```
+```fortran
   integer :: i
   do i = 1, 10, 2
     ! ... perform some computation ...
@@ -69,7 +69,7 @@ present, it will be 1 (unity); if the stride is present, it may not be zero.
 ### Exercise (2 minutes)
 
 What is the number of iterations in the following cases?
-```
+```fortran
    do i = 1, 10
      print *, "i is  ", i
    end do
