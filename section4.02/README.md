@@ -22,7 +22,7 @@ must have only variables.
 The standard input unit (`input_unit` from `iso_fortran_env` in the above)
 is typically the keyboard (or "screen") for interactive use.
 
-## Format specifer
+## Format specifier
 
 In addition to the _list-directed_ or free-format `*` specifier, a
 format may be a string literal, a fixed character parameter, or a
@@ -34,7 +34,7 @@ string constructed at run time. Some examples are:
    write(unit = myunit) var    ! unformatted (no format)
 ```
 
-Output with string (or `*`) format specfier is referred to as _formatted_ I/O.
+Output with string (or `*`) format specifier is referred to as _formatted_ I/O.
 This is to distinguish it from _unformatted_ I/O; this is essentially a
 direct dump of the binary internal representation. For unformatted
 I/O the format specifier is simply omitted.
@@ -128,7 +128,7 @@ If a leading plus sign is wanted, use the `sp` control, e.g.:
 
 ### Exercise (2 minutes)
 
-Compile and run the accompanying `example1.f90`, which provides some specimin
+Compile and run the accompanying `example1.f90`, which provides some specimen
 formats. Some of the format specifiers have not allowed a large enough
 width. What's the result? What's the solution?
 
@@ -147,7 +147,7 @@ In this way, more complex formats can be constructed.
 ### Complex variables
 
 Variables of `complex` type are treated as two `real` values for the
-purposes of a format specifer. The real and imaginary part do not have to
+purposes of a format specifier. The real and imaginary part do not have to
 have the same edit descriptor.
 
 ### Logical variables

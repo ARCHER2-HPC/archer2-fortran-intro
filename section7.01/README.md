@@ -3,7 +3,7 @@
 ## Not covered in this course
 
 The Fortran standard covers a large and increasing number of features.
-Some of these we have only tocuhed on, and others not mentioned at all.
+Some of these we have only touched on, and others not mentioned at all.
 
 * Object-oriented features: type extension, abstract classes/interfaces, ...
 * Interoperability with C
@@ -43,7 +43,7 @@ As the Fortran preprocessor is not standardised, some care may be
 required to ensure portability. For example, stringification of
 macro arguments can be problematic.
 
-An additional compiler flag may be required to switch on the preprossor
+An additional compiler flag may be required to switch on the preprocessor
 explicitly. Alternatively, it is common that compilers will automatically
 run the preprocessor if the file extension has a capital letter e.g.,
 `.F90`, `.F03`, and so on.
@@ -105,7 +105,7 @@ in the most recent standards.
 
 In particular, the use of array sections as the `buf` argument might prove
 problematic and should probably be avoided. It is also preferable for the
-application to marshall data into a contguous buffer for performance
+application to marshal data into a contiguous buffer for performance
 reasons.
 
 In modern versions, the error return code in Fortran are optional integer
@@ -145,7 +145,7 @@ compilation directives.
 The GPU programming model of choice for Fortran has probably been
 OpenACC to the present time.
 
-NVIDIA support an Fortran extension CUDA Fortran, which is not
+NVIDIA support a Fortran extension CUDA Fortran, which is not
 portable.
 
 The OpenMP standard also has support for GPU offload, but the status
@@ -155,7 +155,7 @@ of compiler implementations is in flux.
 ## Testing
 
 Testing is an important consideration in modern software
-enginerring. A number of unit test frameworks exist:
+engineering. A number of unit test frameworks exist:
 
 * pFUnit https://github.com/Goddard-Fortran-Ecosystem/pFUnit
 

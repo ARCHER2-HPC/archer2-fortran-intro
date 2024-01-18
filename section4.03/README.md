@@ -78,7 +78,7 @@ a file exists:
 
 ## Internal files
 
-In some situations, it may be convient to use a formatted read to
+In some situations, it may be convenient to use a formatted read to
 generate a new string in memory (in the same way as `sprintf` in C).
 Fortran uses a so-called _internal file_, which is usually a
 character string. E.g.,

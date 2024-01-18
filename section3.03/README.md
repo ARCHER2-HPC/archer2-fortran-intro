@@ -41,7 +41,7 @@ actual arguments.
 ### `lbound()` and `ubound()` again
 
 The `lbound()` and `ubound()` functions return a rank one array which
-is the  relevant bound in each dimension. The optional argument `dim`
+is the relevant bound in each dimension. The optional argument `dim`
 can be used to obtain the bound in the corresponding rank or dimension
 e.g.,
 ```fortran

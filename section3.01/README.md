@@ -115,7 +115,7 @@ make this scope explicit via the `public` and `private` statements.
 ```fortran
 module module1
 
-  implcit none
+  implicit none
   public
 
   integer, parameter :: mykind = kind(1.d0)
@@ -241,7 +241,7 @@ Additional exercise: Can we have the following situation:
 module a
 
   use b
-  implciit none
+  implicit none
   ! content a ...
 end module a
 ```

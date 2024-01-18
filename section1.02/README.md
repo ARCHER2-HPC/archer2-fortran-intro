@@ -224,7 +224,7 @@ for complex conjugate.
 Broadly, assignments featuring different data types will cause
 promotion to a "wider" type or cause truncation to a "narrower" type.
 If one wants to be explicit, the equivalent of the cast mechanism in C
-is via intrisic functions, e.g.,
+is via intrinsic functions, e.g.,
 ```fortran
    integer          :: i = 1
    complex (real64) :: z = (1.0, 1.0)

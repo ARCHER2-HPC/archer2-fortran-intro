@@ -103,7 +103,7 @@ outer_if: &
      ! ... structured block ...
   endif outer_if
 ```
-The standand maximum line length in Fortran is 132 characters. Longer lines can
+The standard maximum line length in Fortran is 132 characters. Longer lines can
 be broken with the continuation character `&` to a maximum of 255 continuation
 lines (F2003).
 
@@ -154,7 +154,7 @@ Character variables hold zero or more characters. Some examples are:
 ```fortran
 program example2
 
-  implciit none
+  implicit none
   character (len = *), parameter :: string1 = "don't"   ! 5 characters
   character (len = 5)            :: string2 = "Don""t"  ! 5 characters
   character (len = 6)            :: string3 = 'don''t'  ! 5 characters + blank
@@ -163,8 +163,8 @@ end program example2
 ```
 The implementation must provide at least one type of character storage,
 with the default kind being `kind('A')`. In practice, kind type
-parameters are not often specifiied. However, there should be a `len`
-specifer.
+parameters are not often specified. However, there should be a `len`
+specifier.
 
 There is, again, a certain elasticity in the form of the declaration, so
 you may see slightly different things.
