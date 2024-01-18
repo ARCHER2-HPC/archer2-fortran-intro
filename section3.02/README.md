@@ -1,6 +1,6 @@
 # Functions and subroutines
 
-Functions and subroutines, referred to colletively as _procedures_, may be
+Functions and subroutines, referred to collectively as _procedures_, may be
 defined as module sub-programs, where the compiler will automatically
 generate the contract block (aka. forward declaration, prototype) as
 part of the module file.

@@ -106,7 +106,7 @@ must appear as `null()` in a constructor expression list.
 
 ### Default initialisation
 
-A type may be defined with default initial values. One noatable exception
+A type may be defined with default initial values. One notable exception
 is that allocatable components do not have an initialisation. E.g.:
 ```
   type :: my_type

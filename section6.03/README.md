@@ -83,7 +83,7 @@ If you look at the fist few line of this example, you should see
 and provide a procedure which initialises such a type from a
 file.
 
-* Provide a procedure which brings into exsitance a dense matrix
+* Provide a procedure which brings into existence a dense matrix
 (just a two-dimensional array) initialised with the correct non-zero
 elements.
 
@@ -95,4 +95,4 @@ elements to provide a check the file has been read correctly.
 
 ## Solutions
 
-Some solutions are available in the [soultions](./solutions) directory.
+Some solutions are available in the [solutions](./solutions) directory.

@@ -250,6 +250,6 @@ with the sum
 Write a procedure that will take the limits `a` and `b`, the integer number
 of steps `n`, and the function, and returns a result.
 
-To check, you can evaluation the function `cos(x) sin(x)` between `a = 0`
+To check, you can evaluate the function `cos(x) sin(x)` between `a = 0`
 and `b = pi/2` (the answer should be 1/2). Check your answer gets better
 for value of `n = 10, 100, 1000`.
