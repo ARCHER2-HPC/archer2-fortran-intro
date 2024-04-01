@@ -17,7 +17,7 @@ Formally, a Fortran program consists of one or more lines made up of
 Fortran _statements_. Line breaks are significant (e.g., there are
 no semi-colons `;` required here).
 
-Comments are introduced with an exclaimation mark `!`, and may trail
+Comments are introduced with an exclamation mark `!`, and may trail
 other statements.
 
 The `program` statement is roughly doing the equivalent job of `main()`
@@ -32,7 +32,7 @@ Check now you can compile and run the first example program `example1.f90`.
 ```
   [ program [program-name] ]
      [ specification-part ]
-     [ exectuable-part ]
+     [ executable-part ]
   [ contains
      internal-subprogram-part ]
   end [program-name]

@@ -46,7 +46,7 @@ dimension (_extent_ 3). It is said to have _shape_ (2,3), which is
 the sequence of extents in each dimension. Its size is 6 elements.
 
 There is an array element order which in which we expect the implementation
-to store contiguously in memory. In Fortran this has be left-most
+to store contiguously in memory. In Fortran this has to be the left-most
 dimension counting fastest. For array `a` we expect the order in
 memory to be
 ```

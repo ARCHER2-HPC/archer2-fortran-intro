@@ -3,7 +3,7 @@
 Iteration in Fortran is based around the `do` construct (somewhat analogous to
 C `for` construct). There is no equivalent of the C++ iterator class.
 
-## Uncontroled `do` construct
+## Uncontrolled `do` construct
 
 A simple iteration is provided by the `do` statement. For example, ...
 ```

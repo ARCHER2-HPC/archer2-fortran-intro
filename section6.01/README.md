@@ -68,7 +68,7 @@ defined in the file `external.f90`, and an accompanying program
 
 Compile the two files, e.g.:
 ```
-$ ftn external.f90 program.f90
+$ ftn external.f90 example1.f90
 ```
 (note that there are no modules involved, and no `.mod` files will appear).
 What is the result when you try to run the program?
@@ -112,7 +112,7 @@ use intrinsic procedures as actual arguments.
 ## Limited polymorphism
 
 We have seen a number of intrinsic functions which take arguments of
-different types (such as `mod()`). Such a situation where the arguments
+different types, such as `mod()`. Such a situation where the arguments
 can take a different form is sometimes referred to as limited polymorphism
 (or overloading).
 
@@ -142,11 +142,11 @@ based on the actual argument when used with a _generic name_. This is:
 ```
 This should appear in the specification part of the relevant module.
 The two specific implementations must be distinguishable by the compiler,
-that is, at least one none-optional dummy argument must be different.
+that is, at least one non-optional dummy argument must be different.
 
 ### Exercise
 
-In section4.03, we wrote a module to produce a `.pnm` image file. The
+In section 4.03, we wrote a module to produce a `.pnm` image file. The
 accompanying module `pbm_image.f90` provides two implementations
 of such a routine: one for a logical array, and another for an integer
 array.
@@ -250,6 +250,6 @@ with the sum
 Write a procedure that will take the limits `a` and `b`, the integer number
 of steps `n`, and the function, and returns a result.
 
-To check, you can evaluation the function `cos(x) sin(x)` between `a = 0`
+To check, you can evaluate the function `cos(x) sin(x)` between `a = 0`
 and `b = pi/2` (the answer should be 1/2). Check your answer gets better
 for value of `n = 10, 100, 1000`.
