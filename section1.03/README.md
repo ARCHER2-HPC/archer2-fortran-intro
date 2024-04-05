@@ -122,7 +122,7 @@ for actions conditional on a range or set of distinct values. Formally,
 		    block ] ...
 		[ case default
 		    block ]
-              end select case [case-name]
+              end select [case-name]
 
 ```
 The _case-expression_ must be a scalar integer, logical, or character

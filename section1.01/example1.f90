@@ -13,6 +13,6 @@ program hello
   ! an asterisk  list directed i/o "a free format" decided by implementation
   ! a label      statement label for format defined elsewhere
 
-  ! the list is a comma spearated list of items
+  ! the list is a comma separated list of items
 
 end program hello

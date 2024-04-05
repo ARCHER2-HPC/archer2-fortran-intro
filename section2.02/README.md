@@ -123,5 +123,5 @@ Introduce array storage for the quantites `a`, `b` and `t`. Use a
 fixed number of terms. Assign appropriate values in a first loop.
 In a second loop, compute the approximation of pi at each iteration.
 
-What might you do if you wanted to storage only the number of terms
+What might you do if you wanted to store only the number of terms
 taken to reach a converged answer?
