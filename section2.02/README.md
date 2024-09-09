@@ -21,7 +21,7 @@ The default _lower bound_ is 1 and the _upper bound_ is 3.
 
 ### Lower and upper bounds
 ```
-  real, dimension(-2:1) :: b ! elements b(-2), b(1), b(0), b(1)
+  real, dimension(-2:1) :: b ! elements b(-2), b(-1), b(0), b(1)
 ```
 Here we specify, explicitly, the lower and upper bounds. The
 _size_ of this array is 4.
