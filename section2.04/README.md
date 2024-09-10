@@ -20,7 +20,7 @@ Game of Life is a _cellular automata_ model where an array of cells is updated
 based on simple [rules](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules) 
 about the values of each neighbouring cell. 
 
-Using the rules above, create an array with an initial starting pattern, then
+Using the [rules described here](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules) (also summarised below), create an array with an initial starting pattern, then
 write code to advance the initial pattern to the next iteration based on the rules above.
 
 To get an idea for what you need to implement, experiment using this online version of
