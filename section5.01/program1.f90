@@ -11,8 +11,6 @@ program program1
   type (my_rng) :: rng = my_rng()
   integer :: n
 
-  rng = my_rng(1, 1, 0, 2147483647)
-
   do n = 1, 6
     print *, "Step ", n, my_rng_int(rng)
   end do

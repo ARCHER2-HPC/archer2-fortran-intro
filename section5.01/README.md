@@ -137,7 +137,7 @@ a so-called linear congruential generator.
 See https://en.wikipedia.org/wiki/Linear_congruential_generator.
 
 The module provides derived type to aggregate the multiplier `a`,
-the seed or state `s`, the increment `c` and the module `m`.
+the seed or state `s`, the increment `c` and the modulus `m`.
 These have some default values. Practical implementations often
 choose `c = 0`.
 
