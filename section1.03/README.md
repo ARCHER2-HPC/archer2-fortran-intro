@@ -142,7 +142,7 @@ For example:
        ! Court card ...
      case default
        ! error...?
-   end select case
+   end select
 ```
 A range may be open-ended (e.g., `2:` or `:10`). Note there is no break-like
 statement as in the C switch; only the relevant case block is executed.
