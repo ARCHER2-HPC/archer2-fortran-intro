@@ -15,7 +15,7 @@ program game_of_life
     ! The "rules" are based on the total number of living cells surrounding
     ! our centre cell.
     !
-    ! Cell state   N (neighbouring live cells)     New Cell state
+    ! Cell state   N (neighbouring live cells)     New C state
     ! 1            0,1                         ->  0       # Lonely
     ! 1            4,5,6,7,8                   ->  0       # Overcrowded
     ! 1            2,3                         ->  1       # Lives
@@ -24,28 +24,29 @@ program game_of_life
     
     implicit none
     
-    ! Declare
-    integer, parameter :: nrow = 31, ncol = 31
+    ! Use an array large enough to contain the pattern as it 
+    ! expands over multiple iterations. 
+    integer, parameter :: nrow = 21, ncol = 21
     integer :: i, j, sum
     integer, dimension(nrow, ncol) :: board, nextBoard
     
     ! Chars for the output printing
     character(nrow) :: output
     
-    ! Initialise the starting state of the board
+    ! Initialise the starting state of the board.
+    ! The central section of the 21x21 grid looks like this:
+    ! .........
+    ! ..#.#.#..
+    ! ..#...#..
+    ! ..#...#..
+    ! ..#...#..
+    ! ..#.#.#..
+    ! .........
     board(:,:) = 0
-    board(14,14) = 1
-    board(15,14) = 1
-    board(16,14) = 1
-    board(17,14) = 1
-    board(18,14) = 1
-    board(14,16) = 1
-    board(18,16) = 1
-    board(14,18) = 1
-    board(15,18) = 1
-    board(16,18) = 1
-    board(17,18) = 1
-    board(18,18) = 1
+    board(9:13,9) = 1
+    board(9,11) = 1
+    board(13,11) = 1
+    board(9:13,13) = 1
 
     ! nextBoard stores the next iteration of board. 
     ! It needs to be zero-ed to begin with
