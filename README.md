@@ -12,7 +12,7 @@ have a refresher in Fortran.
 
 Fortran (a contraction of Formula Translation) was the first programming
 language to have a standard (in 1954), but has changed significantly over
-the years. More recent standards (the latest being Fortran 2018) come
+the years. More recent standards (the latest being Fortran 2023) come
 under the umbrella term "Modern Fortran". Fortran retains very great
 significance in many areas of scientific and numerical computing,
 particularly for applications such as quantum chemistry, plasmas, and in
