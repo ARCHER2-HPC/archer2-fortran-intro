@@ -15,7 +15,8 @@ program exercise
   !   d = [1.0, 4.0, 5.0, 6.0]
   ! which should give a solution approx. x = [-0.195, 0.890, 0.317, 1.42]
 
-  ! 1. Implement the algorithm following the pseudocode.
+  ! 1. Implement the algorithm following the second method which
+  !    allows the input quantities to be modified.
   ! 2. Check the answer
   ! 3. Construct the full matrix and use the intrinsic function
   !    matmul(a, x) to check the answer for a different d. The
@@ -25,5 +26,8 @@ program exercise
   !    the matrix is diagonally dominant. Check this is the case
   !    before entering the solution phase.
   !    See also https://en.wikipedia.org/wiki/Diagonally_dominant_matrix
+
+  !  5. Can you implement the method which does not destroy the initial
+  !     matrix and RHS?
 
 end program exercise
