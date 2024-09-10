@@ -102,4 +102,4 @@ program game_of_life
         print *, output
     enddo
 
-end program
+end program game_of_life
