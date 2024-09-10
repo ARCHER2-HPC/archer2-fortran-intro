@@ -45,7 +45,10 @@ explicitly declared otherwise).
 
 By modern standards this is tantamount to recklessness. The general solution
 to prevent errors involving undeclared variables (usually arising from
-typos) is to declare that no names have implicit type via `implicit none`.
+typos) is to declare that no names have implicit type via
+```
+implicit none
+```
 
 In this case, all variable names must be declared explicitly before they
 are referenced.
@@ -169,7 +172,8 @@ integer
 which is the kind type parameter of the argument. In this context a constant
 expression is one in which all parts are intrinsic.
 
-Note we have not included anything or `use`'d anything to make this available.
+Note we have not included anything or `use`'d anything to make this `kind()`
+function available.
 It is an intrinsic function and part of the language itself.
 
 Using a parameter provides a degree of abstraction for the real data type.
@@ -272,7 +276,7 @@ of a negative value stored as a real variable?
 The accompanying template `exercise3.f90` provides instructions for an
 exercise which involves the approximation to the constant pi computed
 via a Gauss-Legendre algorithm. Some
-background can be found at https://en.wikipedia.org/wiki/Pi.
+background can be found at https://en.wikipedia.org/wiki/Gauss-Legendre_algorithm.
 
 A solution to this problem appears as the template for the exercise in
 [section2.01](../section2.01/exercise1.f90).
