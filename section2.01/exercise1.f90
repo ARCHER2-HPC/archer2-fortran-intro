@@ -3,7 +3,7 @@ program exercise1
   ! Compute an approximation to pi.
 
   ! An approximation using the Gauss-Legendre algorithm
-  ! See, e.g., https://en.wikipedia.org/wiki/Pi
+  ! See, e.g., https://en.wikipedia.org/wiki/Gauss-Legendre_algorithm
   !
   ! Add an iteration which computes successive approximations
   ! to pi (say the first 5 or 6)
