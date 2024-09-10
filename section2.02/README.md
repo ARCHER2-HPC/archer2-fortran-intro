@@ -125,3 +125,23 @@ In a second loop, compute the approximation of pi at each iteration.
 
 What might you do if you wanted to store only the number of terms
 taken to reach a converged answer?
+
+
+#### Help is available!
+
+As arrays are self-describing in Fortran, it is relatively easy for the
+compiler to analyse whether array accesses are valid, or within bounds.
+This can help debugging. Most compilers will have an option that instructs
+the compiler to inject additional code which checks bounds at run time.
+For the Cray Fortran compiler, this is `-hbounds`; for the GNU compiler,
+this is `-fbounds-check`.
+
+E.g.,
+```
+$ ftn -hbounds exercise1.f90
+```
+Some compilers may also be able to check certain bounds at compile
+time, and issue a compile-time message. However, in general, errors
+may not appear until run time. If your program crashes, or produces
+unexpected results, this compiler option can help to track down
+problems with invalid array accesses.
