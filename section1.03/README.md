@@ -82,7 +82,7 @@ A single clause `if` statement is also available, for example:
 ### Example 1 (3 minutes)
 
 The file `example1.f90` contains a version of the code above. Check
-it works as expected. Can you can the relational operators to use
+it works as expected. Can you replace the relational operators to use
 the older form given in the table above?
 
 
