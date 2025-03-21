@@ -64,7 +64,7 @@ Conditional statements are provided by the `if` construct, formally:
             end if [if-name]
 ```
 There may be zero or more `else if` blocks, but at most one `else` block.
-At most one block is executed. For example (see `example1.f90`):
+At most one block is executed. For example:
 ```
   if (i < j) then
     print *, "The smaller is: i ", i
@@ -78,6 +78,13 @@ A single clause `if` statement is also available, for example:
 ```
   if (a >= 0.0) b = sqrt(a)
 ```
+
+### Example 1 (3 minutes)
+
+The file `example1.f90` contains a version of the code above. Check
+it works as expected. Can you can the relational operators to use
+the older form given in the table above?
+
 
 ### Construct names
 
@@ -179,8 +186,8 @@ strings in a later section.
 ## Exercise (1 minute)
 
 Compile and check the output of `example2.f90` to see the result of
-the examples above. What happens if the `len` specification is too
-short?
+the examples above. What happens if you change one of the `len`
+specifications to be too short?
 
 
 ## Exercise (5 minutes)
