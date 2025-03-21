@@ -140,11 +140,12 @@ PROGRAM example1
 END PROGRAM example1
 ```
 As modern etiquette tends to regard capitals as shouting, this can cause
-some strain. In addition, as the compiler will accept mixed
-case, an additional tool would be required to enforce style (if
-enforcement was wanted).
+some tension.
 
-This course therefore prefers an all lower-case style.
+The compiler will accept mixed case. An additional tool would be required
+to enforce a particular style.
+
+This course will prefer an all lower-case style.
 
 ### Exercise (2 minutes)
 
@@ -157,4 +158,4 @@ add it now. What happens to the results if you miss out one of the
 symbols referenced from the `only` clause? This behaviour will be
 explained in the following section.
 
-A version of this program ia available as `exercise1.f90`.
+A version of this program is available as `exercise1.f90`.
