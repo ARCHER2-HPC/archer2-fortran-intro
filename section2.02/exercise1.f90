@@ -39,7 +39,7 @@ program exercise1
 
   do
     print *, "Approximation n, pi: ", n, (a + b)**2/(4.0*t)
-    if (n > 10) exit
+    if (n > 6) exit
 
     an = a
 
