@@ -134,7 +134,7 @@ compiler to analyse whether array accesses are valid, or within bounds.
 This can help debugging. Most compilers will have an option that instructs
 the compiler to inject additional code which checks bounds at run time.
 For the Cray Fortran compiler, this is `-hbounds`; for the GNU compiler,
-this is `-fbounds-check`.
+this is `-fcheck=bounds`.
 
 E.g.,
 ```
