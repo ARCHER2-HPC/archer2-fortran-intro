@@ -23,30 +23,26 @@ program exercise2
   implicit none
 
   integer, parameter :: nmax = 120
-  integer, dimension(2:nmax) :: ia
   logical, dimension(2:nmax) :: isprime
 
   integer :: n, p
 
   do n = 2, nmax
-     ia(n) = n
      isprime(n) = .true.
   end do
 
   do p = 2, nmax
-     do n = 2*p, nmax
-        if (mod(n,p) == 0) isprime(n) = .false.
+     do n = 2*p, nmax, p
+        isprime(n) = .false.
      end do
      ! One could use an array construct...
-     !where (mod(ia(2*p:), p) == 0)
-     !   isprime(2*p:) = .false.
-     !end where
+     !isprime(2*p::p) = .false.
   end do
 
   ! Results
 
   do n = 2, nmax
-     print *, "n is prime: ", ia(n), isprime(n)
+     print *, "n is prime: ", n, isprime(n)
   end do
 
   print *, "Number of primes: ", count(isprime)
