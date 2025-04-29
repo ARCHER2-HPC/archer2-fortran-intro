@@ -138,8 +138,33 @@ There are a number of conditions which must be met to qualify for
 1. For a function, any dummy arguments must be intent(in);
 2. No variables accessed by host association can be updated (and no variables with `save` attribute);
 3. there must be no operations on external files;
+4. any procedure called from within a pure procedure must also be `pure`;
 4. there must be no `stop` statement.
 
+
+### `elemental` functions
+
+Again, we have seen that some intrinsic functions allow either scalar
+or array actual arguments. The same effect can be achieved for a
+user-defined function by declaring it to be _elemental_. The procedure
+is declared in terms of a scalar dummy argument, but then may be
+applied to an array actual argument element by element.
+
+Such a procedure should be declared:
+```
+  elemental function my_function(a) result(b)
+    integer, intent(in) :: a
+    integer             :: b
+    ! ...
+  end function my_function
+```
+An invocation should be, e.g.:
+```
+   iresult(1:4) = my_function(ival(1:4))
+```
+
+All arguments (and function results) must conform. An elemental routine
+usually must also be `pure`.
 
 ### `recursive` procedures
 

@@ -156,69 +156,6 @@ name `write_pbm` to allow the program `example3.f90` to be compiled
 correctly.
 
 
-## Operator overloading
-
-For simple derived types it may be meaningful to define relational
-and arithmetic operators. For example, if we had a date type such as
-```
-  type :: my_date
-    integer :: day
-    integer :: month
-    integer :: year
-  end type my_date
-```
-it may be meaningful to ask whether two dates are equal and so on (it would
-not really be meaningful to add one date to another).
-
-One can write a function to do this:
-```
-  function my_dates_equal(date1, date2) result(equal)
-    type (my_date), intent(in) :: date1
-    type (my_date), intent(in) :: date2
-    logical                       equal
-    ! ...
-  end function my_dates_equal
-```
-As a syntactic convenience, it might be useful to use `==` in a logical
-expression using dates. This can be arranged via
-```
-  interface operator(==)
-    module proceduce my_dates_equal
-  end interface
-```
-Again this should appear in the relevant specification part of the
-relevant module. Such overloading is possible for relational operators
-`==`, `/=`, `>=`, `<=`, `>` and `<`. If appropriate, overloading is also
-available for arithmetic operators `+`, `-`, `*`, and `/`.
-
-It is also possible to overload assignment `=`.
-
-
-## Elemental functions
-
-Again, we have seen that some intrinsic functions allow either scalar
-or array actual arguments. The same effect can be achieved for a
-user-defined function by declaring it to be _elemental_. The procedure
-is declared in terms of a scalar dummy argument, but then may be
-applied to an array actual argument element by element.
-
-Such a procedure should be declared:
-```
-  elemental function my_function(a) result(b)
-    integer, intent(in) :: a
-    integer             :: b
-    ! ...
-  end function my_function
-```
-An invocation should be, e.g.:
-```
-   iresult(1:4) = my_function(ival(1:4))
-```
-
-All arguments (and function results) must conform. An elemental routine
-usually must also be `pure`.
-
-
 ### Exercise (5 minutes)
 
 In the `pbm_image.f90` module there is a utility function `logical_to_pbm()`
