@@ -88,56 +88,59 @@ advertised start and finish times, and the break times.
 | 10:00 | Background: Fortran standards                           | [FXX](docs/F-STANDARDS.md) |
 | 10:20 | "Hello World"                                           |                            |
 |       | `program`, `print` and `write`, `use`                   | [section1.01](section1.01) |
-| 10:40 | Variables: numeric; expressions and assignments, kind   |                            |
-|       | `real`, `integer`, `complex`, `parameter`               | [section1.02](section1.02) |
+| 10:40 | Exercises                                               |                            |
 | 11:00 | Break                                                   |                            |
-| 11:30 | Variables: logical, character, conditionals             |                            |
+| 11:20 | Variables: numeric; expressions and assignments, kind   |                            |
+|       | `real`, `integer`, `complex`, `parameter`               | [section1.02](section1.02) |
+| 11:40 | Exercises                                               |                            |       
+| 12:00 | Variables: logical, character, conditionals             |                            |
 |       | `if  .. end if` and `select case`                       | [section1.03](section1.03) |
-| 11:50 | Loops and flow of control                               |                            |
-|       | `do .. end do`, `exit` and `cycle`                      | [section2.01](section2.01) |
-| 12:30 | Exercises                                               |                            |
+| 12:40 | Exercises                                               |                            |
 | 13:00 | Lunch                                                   |                            |
-| 14:00 | Array declarations: rank, bounds, size and shape        |                            |
+| 14.00 | Loops and flow of control                               |                            |
+|       | `do ... end do`, `exit` and `cycle`                     | [section2.01](section2.01) |
+| 14:20 | Exercises                                               |                            |
+| 14:40 | Array declarations: rank, bounds, size and shape        |                            |
 |       | `dimension`, `allocatable`, `allocate()`, `reshape()`   | [section2.02](section2.02) |
-| 14:20 | Array expressions: sections, conformance, masks         |                            |
-|       | `minval()` etc.; `where .. end where`; `any()` `all()`  | [section2.03](section2.03) |
-| 14:40 | Mini-exercise: solve a tri-diagonal system              |                            |
-|       |                                                         | [section2.04](section2.04) |
 | 15:00 | Break                                                   |                            |
-| 15:30 | Modules and compilation of modules; scope               |                            |
-|       | `module .. contains .. end module`; `public`, `private` | [section3.01](section3.01) |
-| 15:50 | Functions and subroutines; dummy argument intent        |                            |
-|       | `function` `result()` `subroutine` `intent` ...         | [section3.02](section3.02) |
-| 16:10 | More on array dummy arguments; assumed shape, ...       |                            |
-|       | `lbound()`, `ubound()`                                  | [section3.03](section3.03) |
+| 15:20 | Array expressions: sections, conformance, masks         |                            |
+|       | `minval()` etc.; `where .. end where`; `any()` `all()`  | [section2.03](section2.03) |
+| 15:40 | Exercises                                               |                            |
+| 16:00 | Mini-exercise: solve a tri-diagonal system or ...       |                            |
+|       |     ... game of life                                    | [section2.04](section2.04) |
 | 16:30 | Finish                                                  |                            |
 
 ### Day two
 
 | Time  | Content                                                 | Section                    |
 |-------|---------------------------------------------------------|----------------------------|
-| 09:30 | More on characters and strings; deferred length         |                            |
+| 09:30 | Modules and compilation of modules; scope               |                            |
+|       | `module .. contains .. end module`; `public`, `private` | [section3.01](section3.01) |
+| 09:50 | Functions and subroutines; dummy argument intent        |                            |
+|       | `function` `result()` `subroutine` `intent` ...         | [section3.02](section3.02) |
+| 10:10 | More on array dummy arguments; assumed shape, ...       |                            |
+|       | `lbound()`, `ubound()`                                  | [section3.03](section3.03) |
+| 10:30 | More on characters and strings; deferred length         |                            |
 |       | `len()` `len_trim()`, `trim()`                          | [section4.01](section4.01) |
-| 09:50 | Format strings and edit descriptors                     |                            |
-|       | `read` and `write`                                      | [section4.02](section4.02) |
-| 10:10 | I/O and files; recovering from errors, or not           |                            |
-|       | `open` `close` `inquire` `stop`                         | [section4.03](section4.03) |
-| 10:30 | Exercises                                               |                            |
 | 11:00 | Break                                                   |                            |
-| 11:30 | Data structures                                         |                            |
-|       | `type .. end type`                                      | [section5.01](section5.01) |
-| 11:50 | Pointer attribute and targets                           |                            |
-|       | `null()`, `associated()`, `associate .. end associate`  | [section5.02](section5.02) |
-| 12:10 | Functions: interface blocks, limited polymorphism ...   | [section6.01](section6.01) |
-|       | `interface`, `module procedure`                         |                            |
-| 12:30 | Miscellaneous intrinsic functions                       |                            |
-|       | `get_command_argument()`, `date_and_time()` ...         | [section6.02](section6.02) |
+| 11:20 | Format strings and edit descriptors                     |                            |
+|       | `read` and `write`                                      | [section4.02](section4.02) |
+| 11:40 | Exercises                                               |                            |
+| 12:00 | I/O and files; recovering from errors, or not           |                            |
+|       | `open` `close` `inquire` `stop`                         | [section4.03](section4.03) |
+| 12:20 | Exercises
 | 13:00 | Lunch                                                   |                            |
-| 14:00 | Mini-exercise on conjugate gradient ...                 |                            |
-|       | .. and larger matrices                                  | [section6.03](section6.03) |
+| 14:00 | Data structures                                         |                            |
+|       | `type .. end type`                                      | [section5.01](section5.01) |
+| 14:20 | Exercises                                               |                            |
+| 14:40 | Functions: interface blocks, limited polymorphism ...   | [section6.01](section6.01) |
+|       | `interface`, `module procedure`                         |                            |
 | 15:00 | Break                                                   |                            |
-| 15:30 | Exercises / solutions                                   |                            |
-| 16:00 | Other things you may see; testing; resources            | [section7.01](section7.01) |
+| 15:20 | Mini-exercise on conjugate gradient ...                 |                            |
+|       | .. and larger matrices                                  | [section6.03](section6.03) |
+| 15:50 | Pointer attribute and targets                           |                            |
+|       | `null()` `associated()`, `associate .. end associate`   | was 5.02                   
+| 16:10 | Other things you may see; testing; resources            | [section7.01](section7.01) |
 | 16:30 | Finish                                                  |                            |
 
 ---
