@@ -37,14 +37,19 @@ Check now you can compile and run the first example program `example1.f90`.
      internal-subprogram-part ]
   end [program-name]
 ```
-Optional components are represented with square brackets `[...]`. It
-follows that the shortest standard-conforming program will be (see
+Optional components are represented with square brackets `[...]`.
+It follows that the shortest standard-conforming program will be (see
 `example2.f90`):
 ```
 end
 ```
 If the `program-name` is present, it must be at both the beginning and
 the end, and must be the same in both places.
+
+Note that there is a `specification-part` followed by a `executable-part`
+of the program. This means that declarations must come before exectauble
+statements. One cannot freely interleave the two types of statements
+in a program unit (cf. C/C++).
 
 We will return to the `contains` statement in the context of modules.
 
