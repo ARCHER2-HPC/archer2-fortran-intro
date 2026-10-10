@@ -183,7 +183,7 @@ As a syntactic convenience, it might be useful to use `==` in a logical
 expression using dates. This can be arranged via
 ```
   interface operator(==)
-    module proceduce my_dates_equal
+    module procedure my_dates_equal
   end interface
 ```
 Again this should appear in the relevant specification part of the
